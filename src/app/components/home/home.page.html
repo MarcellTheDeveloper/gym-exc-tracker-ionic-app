@@ -1,0 +1,7 @@
+<app-header [headerName]="'Workout days'"></app-header>
+<ion-content>
+  <app-single-workout-day
+    *ngFor="let day of days"
+    [day]="day"
+  ></app-single-workout-day>
+</ion-content>

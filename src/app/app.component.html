@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" contentId="main" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title
+          >Welcome: <ion-note>hi@ionicframework.com</ion-note></ion-title
+        >
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="home">
+            <ion-icon name="barbell-outline" slot="start"></ion-icon>
+            <ion-label>Workout days</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="favourite-gyms">
+            <ion-icon name="business-outline" slot="start"></ion-icon>
+            <ion-label>Favourite gyms</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
