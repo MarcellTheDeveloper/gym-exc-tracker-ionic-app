@@ -15,19 +15,30 @@
   </ion-toolbar>
   <ion-item>
     <ion-label position="fixed">Name:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [value]="formValues['name']"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Bodypart:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [value]="formValues['bodypart']"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Sets:</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [value]="formValues['sets']"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Reps:</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [value]="formValues['reps']"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Weight:</ion-label>
+    <ion-button color="primary" class="navButton">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-button>
+    <ion-input type="number" class="excInput" [value]="formValues['weight']">
+    </ion-input>
+    <ion-button color="primary" class="navButton">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-button>
   </ion-item>
   <ion-item>
     <ion-label position="fixed" slot="start">Upload image</ion-label>

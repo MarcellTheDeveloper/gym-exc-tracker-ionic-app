@@ -1,3 +1,4 @@
+import { ExcerciseItem } from './../../interfaces/excercise-item';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
@@ -11,6 +12,13 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
 {
   activeCurrentDaySub;
   currentDay: string;
+  formValues: ExcerciseItem = {
+    name: '',
+    bodyPart: '',
+    sets: 0,
+    reps: 0,
+    weight: 0
+  };
   constructor(private dayHandler: GymDayHandlerService, private router: Router) { }
 
 
