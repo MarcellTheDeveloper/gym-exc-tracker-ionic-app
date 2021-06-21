@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./components/home/home.module').then((m) => m.HomePageModule),
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: '',
@@ -19,6 +19,15 @@ const routes: Routes = [
         (m) => m.FavouriteGymsPageModule
       ),
   },
+  {
+    path: 'single-workout-exercise-edit',
+    loadChildren: () => import('./pages/single-workout-exercise-edit/single-workout-exercise-edit.module').then(m => m.SingleWorkoutExerciseEditPageModule)
+  },  {
+    path: 'single-workout-exercise-add',
+    loadChildren: () => import('./pages/single-workout-exercise-add/single-workout-exercise-add.module').then( m => m.SingleWorkoutExerciseAddPageModule)
+  },
+
+
 ];
 
 @NgModule({
@@ -27,4 +36,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -5,17 +5,20 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class GymDayHandlerService {
+export class GymDayHandlerService
+{
   subject = new Subject<any>();
+  activeCurrentDay = new Subject<string>();
 
-  excercisesByDay = {
+  exercisesByDay = {
     sunday: [
-      { name: 'Biceps curl', bodyPart: 'Biceps', series: 4, excInOneSeries: 8 },
+      { name: 'Biceps curl', bodyPart: 'Biceps', sets: 4, reps: 8, weight: 20 },
       {
         name: 'Biceps hammer',
         bodyPart: 'Biceps',
-        series: 3,
-        excInOneSeries: 12,
+        sets: 3,
+        reps: 12,
+        weight: 20
       },
     ],
     monday: [],
@@ -24,19 +27,21 @@ export class GymDayHandlerService {
     thursday: [],
     friday: [],
     saturday: [
-      { name: 'Biceps curl', bodyPart: 'Biceps', series: 4, excInOneSeries: 8 },
+      { name: 'Biceps curl', bodyPart: 'Biceps', sets: 4, reps: 8, weight: 20 },
       {
-        name: 'Biceps hammer',
+        name: 'Biceps hammer curl curl curl',
         bodyPart: 'Biceps',
-        series: 3,
-        excInOneSeries: 12,
+        sets: 3,
+        reps: 12,
+        weight: 20
       },
     ],
   };
 
-  constructor() {}
+  constructor() { }
 
-  getExcOfDay(currentDay: string) {
-    return this.excercisesByDay[currentDay];
+  getExcOfDay(currentDay: string)
+  {
+    return this.exercisesByDay[currentDay];
   }
 }

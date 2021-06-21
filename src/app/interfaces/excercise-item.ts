@@ -1,6 +1,8 @@
-export interface ExcerciseItem {
+export interface ExcerciseItem
+{
   name: string;
   bodyPart: string;
-  series: number;
-  excInOneSeries: number;
+  sets: number;
+  reps: number;
+  weight: number;
 }
