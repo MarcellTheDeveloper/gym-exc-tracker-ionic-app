@@ -16,5 +16,8 @@ export class SingleWorkoutExcerciseComponent implements OnInit
   {
     console.log(this.exercise);
   }
-
+  openSingleWorkout()
+  {
+    console.log('open this shit');
+  }
 }

@@ -23,4 +23,5 @@ export class SingleWorkoutDayComponent implements OnInit
     await this.router.navigate(['single-workout-exercise-add']);
     this.dayHandler.activeCurrentDay.next(this.day);
   }
+
 }

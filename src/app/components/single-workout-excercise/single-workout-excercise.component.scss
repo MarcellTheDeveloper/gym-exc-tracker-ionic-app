@@ -14,4 +14,12 @@
     width:100px;
     padding:0px 5px;
   }
+  .exerciseContainerWithoutButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      margin:0px 5px;
+    }
+  }
 }

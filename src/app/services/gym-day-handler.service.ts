@@ -44,4 +44,9 @@ export class GymDayHandlerService
   {
     return this.exercisesByDay[currentDay];
   }
+
+  addExercise(day: string, exc: ExcerciseItem)
+  {
+    this.exercisesByDay[day].push(exc);
+  }
 }

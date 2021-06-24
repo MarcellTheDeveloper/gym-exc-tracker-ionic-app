@@ -5,4 +5,5 @@ export interface ExcerciseItem
   sets: number;
   reps: number;
   weight: number;
+  img: string;
 }

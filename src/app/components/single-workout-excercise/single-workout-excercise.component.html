@@ -1,15 +1,16 @@
 <div class="exerciseContainer">
-  <div>
-    <ion-avatar slot="start">
-      <img
-        src="https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg">
-    </ion-avatar>
+  <div class="exerciseContainerWithoutButton" (click)="openSingleWorkout()">
+    <div>
+      <ion-avatar slot="start">
+        <img [src]="exercise['img']">
+      </ion-avatar>
+    </div>
+    <div>
+      <p class="exerciseName">{{ exercise["name"] }}</p>
+    </div>
+    <p>{{ exercise["sets"] }}x{{ exercise["reps"] }}</p>
+    <p>{{ exercise["weight"]}} kg</p>
   </div>
-  <div>
-    <p class="exerciseName">{{ exercise["name"] }}</p>
-  </div>
-  <p>{{ exercise["sets"] }}x{{ exercise["reps"] }}</p>
-  <p>{{ exercise["weight"]}} kg</p>
   <ion-button color="primary">
     <ion-icon name="settings-outline"></ion-icon>
   </ion-button>
