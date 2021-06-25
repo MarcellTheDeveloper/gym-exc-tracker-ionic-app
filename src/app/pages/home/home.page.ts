@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 
 @Component({
   selector: 'app-home',
@@ -7,20 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   currentDay = new Date().getDay();
-  days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
+  exercisesByDay: any;
+  daysArr = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
   ];
-  constructor() {}
+  constructor(private dayHandler: GymDayHandlerService) {}
 
   ngOnInit() {
-    this.days = this.days
+    this.exercisesByDay = this.dayHandler.getExercisesByDay();
+    this.daysArr = this.daysArr
       .slice(this.currentDay)
-      .concat(this.days.slice(0, this.currentDay));
+      .concat(this.daysArr.slice(0, this.currentDay));
   }
 }

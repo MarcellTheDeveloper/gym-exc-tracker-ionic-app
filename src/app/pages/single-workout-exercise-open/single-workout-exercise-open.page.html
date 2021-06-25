@@ -8,15 +8,15 @@
     >
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="ion-text-center">Edit exercise</ion-title>
+    <ion-title class="ion-text-center">{{ exercise['name']}}</ion-title>
     <ion-button
       color="primary"
       slot="end"
       class="navButton"
-      (click)="onSaveExercise()"
+      (click)="onClickSettings()"
       color="secondary"
     >
-      <ion-icon name="save-outline"></ion-icon>
+      <ion-icon name="settings-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -28,35 +28,35 @@
       <ion-icon name="reader-outline" slot="start"></ion-icon>
       <div>
         <ion-card-subtitle>Name</ion-card-subtitle>
-        <ion-input [(ngModel)]="exercise['name']"></ion-input>
+        <ion-label>{{ exercise['name']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="accessibility-outline" slot="start"></ion-icon>
       <div>
         <ion-card-subtitle>Body part</ion-card-subtitle>
-        <ion-input [(ngModel)]="exercise['bodyPart']"></ion-input>
+        <ion-label>{{ exercise['bodyPart']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="refresh-outline" slot="start"></ion-icon>
       <div>
         <ion-card-subtitle>Sets</ion-card-subtitle>
-        <ion-input [(ngModel)]="exercise['sets']"></ion-input>
+        <ion-label>{{ exercise['sets']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="repeat-outline" slot="start"></ion-icon>
       <div>
         <ion-card-subtitle>Reps</ion-card-subtitle>
-        <ion-input [(ngModel)]="exercise['reps']"></ion-input>
+        <ion-label>{{ exercise['reps']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="barbell-outline" slot="start"></ion-icon>
       <div>
         <ion-card-subtitle>Weight (kg)</ion-card-subtitle>
-        <ion-input [(ngModel)]="exercise['weight']"></ion-input>
+        <ion-label>{{ exercise['weight']}} </ion-label>
       </div>
     </ion-item>
   </ion-list>

@@ -1,17 +1,20 @@
-.excInput{
-  max-width:50px !important;
+.excInput {
+  max-width: 50px !important;
   text-align: center;
-  input{
-    padding:0px !important;
+  input {
+    padding: 0px !important;
   }
 }
 
 .sc-ion-input-md-h {
-    --padding-top: 0px !important;
-    --padding-end: 0px !important;
-    --padding-bottom: 0px !important;
-    --padding-start: 0px !important;
+  --padding-top: 0px !important;
+  --padding-end: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-start: 0px !important;
 }
-.reqStar{
-	color:#FF0000;
+.reqStar {
+  color: var(--ion-color-danger);
+}
+ion-label {
+  min-width: 120px !important;
 }

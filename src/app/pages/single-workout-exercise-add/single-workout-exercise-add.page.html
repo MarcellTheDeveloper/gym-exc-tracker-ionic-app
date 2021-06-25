@@ -1,10 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button color="primary" slot="start" class="navButton" (click)="goBackToHomePage()">
+    <ion-button
+      color="primary"
+      slot="start"
+      class="navButton"
+      (click)="goBackToHomePage()"
+    >
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
     <ion-title class="ion-text-center">{{ currentDay}}</ion-title>
-    <ion-button color="primary" slot="end" class="navButton" (click)="saveExercise()">
+    <ion-button
+      color="secondary"
+      slot="end"
+      class="navButton"
+      (click)="saveExercise()"
+    >
       <ion-icon name="save-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -20,39 +30,77 @@
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Bodypart:</ion-label>
-    <ion-input [(ngModel)]="formValues['bodypart']"></ion-input>
+    <ion-input [(ngModel)]="formValues['bodyPart']"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="fixed"><span class="reqStar"> *</span>Sets:</ion-label>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('sets',false)">
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('sets',false)"
+    >
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input type="number" [(ngModel)]="formValues['sets']" class="excInput"></ion-input>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('sets',true)">
+    <ion-input
+      type="number"
+      [(ngModel)]="formValues['sets']"
+      class="excInput"
+    ></ion-input>
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('sets',true)"
+    >
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
     <ion-label position="fixed"><span class="reqStar"> *</span>Reps:</ion-label>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('reps',false)">
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('reps',false)"
+    >
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input type="number" [(ngModel)]="formValues['reps']" class="excInput"></ion-input>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('reps',true)">
+    <ion-input
+      type="number"
+      [(ngModel)]="formValues['reps']"
+      class="excInput"
+    ></ion-input>
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('reps',true)"
+    >
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed"><span class="reqStar"> *</span>Weight {{"(kg)"}}:</ion-label>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('weight',false)">
+    <ion-label position="fixed"
+      ><span class="reqStar"> *</span>Weight{{"(kg)"}}:</ion-label
+    >
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('weight',false)"
+    >
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input type="number" class="excInput" [(ngModel)]="formValues['weight']">
+    <ion-input
+      type="number"
+      class="excInput"
+      [(ngModel)]="formValues['weight']"
+    >
     </ion-input>
-    <ion-button color="primary" class="navButton" (click)="valueChanger('weight',true)">
+    <ion-button
+      color="primary"
+      class="navButton"
+      (click)="valueChanger('weight',true)"
+    >
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>

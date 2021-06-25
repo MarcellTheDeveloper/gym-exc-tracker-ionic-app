@@ -1,36 +1,34 @@
-import { SingleWorkoutExerciseOpenPage } from './../../pages/single-workout-exercise-open/single-workout-exercise-open.page';
 import { ExcerciseItem } from './../../interfaces/excercise-item';
 import { Component, Input, OnInit } from '@angular/core';
-import { GymDayHandlerService } from './../../services/gym-day-handler.service';
-import { AlertController, ModalController } from '@ionic/angular';
-import { ActionSheetController } from '@ionic/angular';
-import { SingleWorkoutExerciseEditPage } from 'src/app/pages/single-workout-exercise-edit/single-workout-exercise-edit.page';
+import {
+  ActionSheetController,
+  ModalController,
+  AlertController,
+} from '@ionic/angular';
+import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
+import { SingleWorkoutExerciseEditPage } from '../single-workout-exercise-edit/single-workout-exercise-edit.page';
+// import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 @Component({
-  selector: 'app-single-workout-excercise',
-  templateUrl: './single-workout-excercise.component.html',
-  styleUrls: ['./single-workout-excercise.component.scss'],
+  selector: 'app-single-workout-exercise-open',
+  templateUrl: './single-workout-exercise-open.page.html',
+  styleUrls: ['./single-workout-exercise-open.page.scss'],
 })
-export class SingleWorkoutExcerciseComponent implements OnInit {
+export class SingleWorkoutExerciseOpenPage implements OnInit {
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
+
   constructor(
     private dayHandler: GymDayHandlerService,
-    public modalController: ModalController,
-    public actionSheetController: ActionSheetController,
-    public alertController: AlertController
+    private modalController: ModalController,
+    private actionSheetController: ActionSheetController,
+    private alertController: AlertController
   ) {}
-
   ngOnInit() {}
-  async openSingleWorkout() {
-    const modal = await this.modalController.create({
-      component: SingleWorkoutExerciseOpenPage,
-      cssClass: 'my-custom-class',
-      componentProps: {
-        exercise: this.exercise,
-        day: this.day,
-      },
+
+  dismissModal() {
+    this.modalController.dismiss({
+      dismissed: true,
     });
-    return await modal.present();
   }
 
   async onClickSettings() {
@@ -50,13 +48,17 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
                 day: this.day,
               },
             });
+
+            this.modalController.dismiss({
+              dismissed: true,
+            });
             return await modal.present();
           },
         },
         {
           text: 'Delete',
-          icon: 'trash-outline',
           cssClass: 'actionSheetDeleteBtn',
+          icon: 'trash-outline',
           handler: async () => {
             const alert = await this.alertController.create({
               cssClass: 'my-custom-class',
@@ -77,6 +79,9 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
                       this.day.toLocaleLowerCase(),
                       this.exercise.name
                     );
+                    this.modalController.dismiss({
+                      dismissed: true,
+                    });
                   },
                 },
               ],

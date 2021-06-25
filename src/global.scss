@@ -34,3 +34,37 @@
 .navButton{
 	margin:0px 20px;
 }
+
+* {
+	font-family: 'Roboto Mono', monospace !important;
+}
+
+//alerts
+.yesIDoBtn {
+  color: var(--ion-color-success) !important;
+	button{
+		color: var(--ion-color-success) !important;
+	}
+}
+.noIDontBtn{
+	color: var(--ion-color-danger) !important;
+	button{
+		color: var(--ion-color-danger) !important;
+	}
+}
+.alertMessageExcName{
+	color:var(--ion-color-tertiary);
+}
+
+
+//action sheet
+.actionSheetEditBtn{
+	.action-sheet-icon{
+		color:var(--ion-color-secondary);
+	}
+}
+.actionSheetDeleteBtn{
+	.action-sheet-icon{
+		color:var(--ion-color-danger);
+	}
+}

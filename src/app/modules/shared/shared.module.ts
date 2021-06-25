@@ -7,8 +7,17 @@ import { SingleWorkoutExcerciseComponent } from 'src/app/components/single-worko
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SingleWorkoutDayComponent, HeaderComponent, SingleWorkoutExcerciseComponent],
+  declarations: [
+    SingleWorkoutDayComponent,
+    HeaderComponent,
+    SingleWorkoutExcerciseComponent,
+  ],
   imports: [CommonModule, IonicModule, FormsModule],
-  exports: [SingleWorkoutDayComponent, HeaderComponent, SingleWorkoutExcerciseComponent, FormsModule],
+  exports: [
+    SingleWorkoutDayComponent,
+    HeaderComponent,
+    SingleWorkoutExcerciseComponent,
+    FormsModule,
+  ],
 })
-export class SharedModule { };
+export class SharedModule {}

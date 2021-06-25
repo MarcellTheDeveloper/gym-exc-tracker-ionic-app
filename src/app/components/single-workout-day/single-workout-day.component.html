@@ -8,8 +8,11 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let exc of exercises" class="center-content">
-          <app-single-workout-excercise [exercise]="exc"></app-single-workout-excercise>
+        <ion-item *ngFor="let exc of exercise" class="center-content">
+          <app-single-workout-excercise
+            [exercise]="exc"
+            [day]="day"
+          ></app-single-workout-excercise>
         </ion-item>
       </ion-list>
       <div class="center-content addButton">
@@ -19,5 +22,4 @@
       </div>
     </ion-card-content>
   </ion-card>
-
 </div>
