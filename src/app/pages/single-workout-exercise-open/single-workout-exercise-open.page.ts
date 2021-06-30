@@ -41,6 +41,9 @@ export class SingleWorkoutExerciseOpenPage implements OnInit {
           icon: 'create-outline',
           cssClass: 'actionSheetEditBtn',
           handler: async () => {
+            this.modalController.dismiss({
+              dismissed: true,
+            });
             const modal = await this.modalController.create({
               component: SingleWorkoutExerciseEditPage,
               componentProps: {
@@ -49,9 +52,6 @@ export class SingleWorkoutExerciseOpenPage implements OnInit {
               },
             });
 
-            this.modalController.dismiss({
-              dismissed: true,
-            });
             return await modal.present();
           },
         },

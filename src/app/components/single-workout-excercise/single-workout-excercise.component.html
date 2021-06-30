@@ -2,7 +2,8 @@
   <div class="exerciseContainerWithoutButton" (click)="openSingleWorkout()">
     <div>
       <ion-avatar slot="start">
-        <img [src]="exercise['img']" />
+        <ion-img [src]="exercise['img']" *ngIf="exercise['img']"></ion-img>
+        <ion-spinner name="circles" *ngIf="!exercise['img']"></ion-spinner>
       </ion-avatar>
     </div>
     <div>

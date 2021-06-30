@@ -8,7 +8,7 @@
     >
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="ion-text-center">{{ currentDay}}</ion-title>
+    <ion-title class="ion-text-center">{{ day}}</ion-title>
     <ion-button
       color="secondary"
       slot="end"
@@ -105,8 +105,9 @@
     </ion-button>
   </ion-item>
   <ion-item>
-    <ion-label position="fixed" slot="start">Upload image</ion-label>
-    <ion-input disabled></ion-input>
-    <ion-icon name="add-outline" slot="start"></ion-icon>
+    <ion-button color="primary" (click)="takePicture()"
+      ><ion-icon name="add-outline"></ion-icon>Upload image</ion-button
+    >
   </ion-item>
+  <ion-img [src]="formValues.img" *ngIf="formValues.img"></ion-img>
 </ion-content>

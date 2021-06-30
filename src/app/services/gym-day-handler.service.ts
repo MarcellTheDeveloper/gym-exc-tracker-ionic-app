@@ -31,7 +31,7 @@ export class GymDayHandlerService {
         sets: 3,
         reps: 12,
         weight: 20,
-        img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+        img: 'https://i.pinimg.com/originals/95/42/dd/9542dde5baffc4e28a1cdd4ee95a1149.png',
       },
     ],
     sunday: [
@@ -41,7 +41,8 @@ export class GymDayHandlerService {
         sets: 4,
         reps: 8,
         weight: 20,
-        img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+        // eslint-disable-next-line max-len
+        img: 'https://www.hexagonmi.com/-/media/Images/Hexagon/Hexagon%20MI/Solutions/Case%20Studies/Other%20Cool%20Stuff/Watson%20Gym%20Equipment/watson_12702%20-%20Copy.ashx?hash=D3F42D94F3BDEF90CA63F06B08E86CA5&h=468&w=350&la=de-AT',
       },
       {
         name: 'Biceps hammer',
@@ -49,7 +50,7 @@ export class GymDayHandlerService {
         sets: 3,
         reps: 12,
         weight: 20,
-        img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+        img: 'https://www.greatlifeindia.in/wp-content/uploads/2020/11/graetlife.jpg',
       },
     ],
   };

@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 import { AlertController, ModalController } from '@ionic/angular';
-
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-single-workout-exercise-add',
   templateUrl: './single-workout-exercise-add.page.html',
@@ -18,13 +19,14 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
     sets: 0,
     reps: 0,
     weight: 0,
-    img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+    img: '',
   };
   constructor(
     private dayHandler: GymDayHandlerService,
     private router: Router,
     public alertController: AlertController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    public sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -62,7 +64,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
                 reps: 0,
                 weight: 0,
                 // eslint-disable-next-line max-len
-                img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+                img: '',
               };
               this.modalController.dismiss({
                 dismissed: true,
@@ -80,7 +82,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
         sets: 0,
         reps: 0,
         weight: 0,
-        img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+        img: '',
       };
       this.modalController.dismiss({
         dismissed: true,
@@ -131,7 +133,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
         sets: 0,
         reps: 0,
         weight: 0,
-        img: 'https://image.made-in-china.com/2f0j00jNStbZyclpkT/Sport-Seated-Bicep-Curl-Machine-Sports-Machine-Exercise-for-Biceps.jpg',
+        img: '',
       };
       this.modalController.dismiss({
         dismissed: true,
@@ -147,6 +149,23 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
       await alert.present();
     }
   }
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri,
+    });
+
+    // image.webPath will contain a path that can be set as an image src.
+    // You can access the original file using image.path, which can be
+    // passed to the Filesystem API to read the raw data of the image,
+    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+    const imageUrl = image.webPath;
+
+    // Can be set to the src of an image now
+    this.formValues.img = imageUrl;
+  };
   ngOnDestroy() {
     this.activeCurrentDaySub.unsubscribe();
   }
