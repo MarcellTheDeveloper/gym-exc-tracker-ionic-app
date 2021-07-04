@@ -1,16 +1,19 @@
 #logoutButtonContainer {
   position: absolute;
-  display:flex;
-  justify-content:center;
-  bottom:0;
-  width:100%;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
   padding: 20px;
 }
 ion-button {
   width: 250px;
 }
 
-.emailDiv{
-  display:flex;
-  justify-content:center;
+.emailDiv {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

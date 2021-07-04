@@ -1,6 +1,6 @@
 {
-  "appId": "com.gymtracker.app",
-  "appName": "gym-tracker",
+  "appId": "com.extrack.app",
+  "appName": "Ex Track",
   "webDir": "www",
   "bundledWebRuntime": false
 }
