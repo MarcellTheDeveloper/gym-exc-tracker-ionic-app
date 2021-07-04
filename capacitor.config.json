@@ -2,5 +2,9 @@
   "appId": "com.extrack.app",
   "appName": "Ex Track",
   "webDir": "www",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "preferences": {
+    "CordovaWebViewEngine": "CDVUIWebViewEngin",
+    "OverrideUserAgent": "Mozilla/5.0 Google"
+  }
 }

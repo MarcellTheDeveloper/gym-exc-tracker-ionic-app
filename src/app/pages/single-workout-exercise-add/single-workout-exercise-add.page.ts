@@ -13,7 +13,8 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './single-workout-exercise-add.page.html',
   styleUrls: ['./single-workout-exercise-add.page.scss'],
 })
-export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
+export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
+{
   @Input() day: string;
   activeCurrentDaySub;
   loader = false;
@@ -33,21 +34,26 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
     public sanitizer: DomSanitizer,
     public fireStorage: AngularFireStorage,
     private capStorage: CapStorageService
-  ) {}
+  ) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
     this.activeCurrentDaySub = this.dayHandler.activeCurrentDay.subscribe(
       (day) => (this.day = day)
     );
   }
 
-  async goBackToHomePage() {
+  async goBackToHomePage()
+  {
     if (
       this.formValues.name ||
       this.formValues.reps ||
       this.formValues.sets ||
-      this.formValues.weight
-    ) {
+      this.formValues.weight ||
+      this.formValues.img
+
+    )
+    {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Confirm',
@@ -57,12 +63,13 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
             text: 'No i stay thanks',
             role: 'cancel',
             cssClass: 'noIDontBtn',
-            handler: () => {},
+            handler: () => { },
           },
           {
             text: 'Yes i do',
             cssClass: 'yesIDoBtn',
-            handler: () => {
+            handler: () =>
+            {
               this.formValues = {
                 name: '',
                 bodyPart: '',
@@ -81,7 +88,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
       });
 
       await alert.present();
-    } else {
+    } else
+    {
       this.formValues = {
         name: '',
         bodyPart: '',
@@ -96,42 +104,54 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
     }
   }
 
-  valueChanger(name: string, change: boolean) {
-    if (name === 'reps') {
-      if (change) {
+  valueChanger(name: string, change: boolean)
+  {
+    if (name === 'reps')
+    {
+      if (change)
+      {
         this.formValues.reps++;
       }
-      if (!change && this.formValues.reps > 0) {
+      if (!change && this.formValues.reps > 0)
+      {
         this.formValues.reps--;
       }
     }
 
-    if (name === 'weight') {
-      if (change) {
+    if (name === 'weight')
+    {
+      if (change)
+      {
         this.formValues.weight++;
       }
-      if (!change && this.formValues.weight > 0) {
+      if (!change && this.formValues.weight > 0)
+      {
         this.formValues.weight--;
       }
     }
 
-    if (name === 'sets') {
-      if (change) {
+    if (name === 'sets')
+    {
+      if (change)
+      {
         this.formValues.sets++;
       }
-      if (!change && this.formValues.sets > 0) {
+      if (!change && this.formValues.sets > 0)
+      {
         this.formValues.sets--;
       }
     }
   }
 
-  async saveExercise() {
+  async saveExercise()
+  {
     if (
       this.formValues.name &&
       this.formValues.sets &&
       this.formValues.reps &&
       this.formValues.weight
-    ) {
+    )
+    {
       this.dayHandler.addExercise(this.day.toLowerCase(), this.formValues);
       this.formValues = {
         name: '',
@@ -144,7 +164,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
       this.modalController.dismiss({
         dismissed: true,
       });
-    } else {
+    } else
+    {
       const alert = await this.alertController.create({
         cssClass: 'yesIDoBtn',
         header: 'Error',
@@ -156,7 +177,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
     }
   }
 
-  takePicture = async () => {
+  takePicture = async () =>
+  {
     const image = await Camera.getPhoto({
       quality: 20,
       allowEditing: false,
@@ -169,7 +191,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
       .ref(`/images/${userId}`)
       .child(uuidv4())
       .putString(image.base64String, 'base64')
-      .then(async (snapshot) => {
+      .then(async (snapshot) =>
+      {
         this.formValues.img = await snapshot.ref.getDownloadURL();
         console.log(
           'Uploaded a base64 string!',
@@ -178,7 +201,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
         this.loader = false;
       });
   };
-  ngOnDestroy() {
+  ngOnDestroy()
+  {
     this.activeCurrentDaySub.unsubscribe();
   }
 }
