@@ -3,6 +3,9 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { ExcerciseItem } from './../../interfaces/excercise-item';
 import { Component, OnInit, Input } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { CapStorageService } from 'src/app/services/cap-storage.service';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-single-workout-exercise-edit',
   templateUrl: './single-workout-exercise-edit.page.html',
@@ -12,10 +15,13 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
   oldExerciseValues: ExcerciseItem;
+  loader: boolean;
   constructor(
     private modalController: ModalController,
     private dayHandler: GymDayHandlerService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    public fireStorage: AngularFireStorage,
+    private capStorage: CapStorageService
   ) {}
   ngOnInit() {
     this.exercise = { ...this.exercise };
@@ -36,20 +42,27 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
   }
   takePicture = async () => {
     const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri,
+      quality: 20,
+      allowEditing: false,
+      correctOrientation: true,
+      resultType: CameraResultType.Base64,
     });
-
-    // image.webPath will contain a path that can be set as an image src.
-    // You can access the original file using image.path, which can be
-    // passed to the Filesystem API to read the raw data of the image,
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    const imageUrl = image.webPath;
-
-    // Can be set to the src of an image now
-    this.exercise.img = imageUrl;
+    this.loader = true;
+    const userId = await this.capStorage.getUserId();
+    this.fireStorage
+      .ref(`/images/${userId}`)
+      .child(uuidv4())
+      .putString(image.base64String, 'base64')
+      .then(async (snapshot) => {
+        this.exercise.img = await snapshot.ref.getDownloadURL();
+        console.log(
+          'Uploaded a base64 string!',
+          await snapshot.ref.getDownloadURL()
+        );
+        this.loader = false;
+      });
   };
+
   async dismissModal() {
     if (
       this.exercise.name !== this.oldExerciseValues.name ||

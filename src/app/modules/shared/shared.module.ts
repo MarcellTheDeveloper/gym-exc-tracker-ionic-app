@@ -5,7 +5,7 @@ import { SingleWorkoutDayComponent } from 'src/app/components/single-workout-day
 import { IonicModule } from '@ionic/angular';
 import { SingleWorkoutExcerciseComponent } from 'src/app/components/single-workout-excercise/single-workout-excercise.component';
 import { FormsModule } from '@angular/forms';
-
+import { Storage } from '@capacitor/storage';
 @NgModule({
   declarations: [
     SingleWorkoutDayComponent,

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-input placeholder="Email" type="email" required #email></ion-input>
+    <ion-input
+      placeholder="Password"
+      type="password"
+      required
+      #password
+    ></ion-input>
+    <ion-button
+      expand="block"
+      color="primary"
+      (click)="signUpWithEmail(email.value, password.value)"
+      ><ion-icon slot="start" name="log-in-outline" color=""></ion-icon>Sign
+      up</ion-button
+    >
+    <p>Already have an account? <a routerLink="/login">Login here!</a></p>
+  </div>
+</ion-content>

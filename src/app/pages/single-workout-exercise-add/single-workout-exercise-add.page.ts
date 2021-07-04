@@ -5,6 +5,9 @@ import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { CapStorageService } from 'src/app/services/cap-storage.service';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-single-workout-exercise-add',
   templateUrl: './single-workout-exercise-add.page.html',
@@ -13,6 +16,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
   @Input() day: string;
   activeCurrentDaySub;
+  loader = false;
   formValues: ExcerciseItem = {
     name: '',
     bodyPart: '',
@@ -26,7 +30,9 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
     private router: Router,
     public alertController: AlertController,
     private modalController: ModalController,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public fireStorage: AngularFireStorage,
+    private capStorage: CapStorageService
   ) {}
 
   ngOnInit() {
@@ -152,19 +158,25 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy {
 
   takePicture = async () => {
     const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: true,
-      resultType: CameraResultType.Uri,
+      quality: 20,
+      allowEditing: false,
+      correctOrientation: true,
+      resultType: CameraResultType.Base64,
     });
-
-    // image.webPath will contain a path that can be set as an image src.
-    // You can access the original file using image.path, which can be
-    // passed to the Filesystem API to read the raw data of the image,
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    const imageUrl = image.webPath;
-
-    // Can be set to the src of an image now
-    this.formValues.img = imageUrl;
+    this.loader = true;
+    const userId = await this.capStorage.getUserId();
+    this.fireStorage
+      .ref(`/images/${userId}`)
+      .child(uuidv4())
+      .putString(image.base64String, 'base64')
+      .then(async (snapshot) => {
+        this.formValues.img = await snapshot.ref.getDownloadURL();
+        console.log(
+          'Uploaded a base64 string!',
+          await snapshot.ref.getDownloadURL()
+        );
+        this.loader = false;
+      });
   };
   ngOnDestroy() {
     this.activeCurrentDaySub.unsubscribe();

@@ -22,11 +22,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-img [src]="exercise['img']" *ngIf="exercise['img']"></ion-img>
-  <ion-spinner
-    name="circles"
-    *ngIf="exercise['img'].length === 0"
-  ></ion-spinner>
+  <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
+  <ion-img
+    [src]="exercise['img']"
+    *ngIf="exercise['img'].length !== 0 && !loader"
+    class="minHeight1px"
+  ></ion-img>
   <ion-list>
     <ion-item>
       <ion-button color="primary" (click)="takePicture()"

@@ -109,5 +109,10 @@
       ><ion-icon name="add-outline"></ion-icon>Upload image</ion-button
     >
   </ion-item>
-  <ion-img [src]="formValues.img" *ngIf="formValues.img"></ion-img>
+  <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
+  <ion-img
+    [src]="formValues.img"
+    *ngIf="formValues.img"
+    class="minHeight1px"
+  ></ion-img>
 </ion-content>

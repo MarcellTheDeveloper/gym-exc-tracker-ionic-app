@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -50,6 +50,16 @@ const routes: Routes = [
     path: 'diary',
     loadChildren: () =>
       import('./pages/diary/diary.module').then((m) => m.DiaryPageModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
+  },
+  {
+    path: 'sign-up',
+    loadChildren: () =>
+      import('./pages/sign-up/sign-up.module').then((m) => m.SignUpPageModule),
   },
 ];
 

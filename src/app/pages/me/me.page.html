@@ -1,9 +1,12 @@
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <strong>Me page coming soon</strong>
-    <p>
-      Working in
-      <a target="_blank" rel="noopener noreferrer">Progress</a>
-    </p>
+<app-header [headerName]="'My account'"></app-header>
+<ion-content
+  ><div class="emailDiv">
+    <p>{{userEmail}}</p>
+  </div>
+  <div id="logoutButtonContainer">
+    <ion-button color="danger" expand="block" (click)="logOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Log out
+    </ion-button>
   </div>
 </ion-content>

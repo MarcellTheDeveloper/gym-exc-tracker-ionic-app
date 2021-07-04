@@ -1,3 +1,9 @@
-.activeLink{
-	color:var(--ion-color-primary);
+.activeLink {
+  color: var(--ion-color-primary);
+}
+#logoutButtonContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
 }

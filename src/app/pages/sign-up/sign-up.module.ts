@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MePageRoutingModule } from './me-routing.module';
+import { SignUpPageRoutingModule } from './sign-up-routing.module';
 
-import { MePage } from './me.page';
-import { SharedModule } from 'src/app/modules/shared/shared.module';
+import { SignUpPage } from './sign-up.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MePageRoutingModule,
-    SharedModule,
+    SignUpPageRoutingModule
   ],
-  declarations: [MePage],
+  declarations: [SignUpPage]
 })
-export class MePageModule {}
+export class SignUpPageModule {}

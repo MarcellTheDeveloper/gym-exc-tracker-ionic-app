@@ -1,14 +1,22 @@
 <ion-app>
-  <ion-menu side="start" menuId="main-menu" contentId="main" type="overlay">
+  <ion-menu
+    side="start"
+    menuId="main-menu"
+    contentId="main"
+    type="overlay"
+    *ngIf="isLoggedIn"
+  >
     <ion-header>
       <ion-toolbar>
         <div class="center-content">
           <ion-avatar>
-            <img src="https://image.pngaaa.com/423/6423-middle.png" />
+            <img
+              src="https://www.shitpostbot.com/img/sourceimages/doom-guy-59c95c9a5a880.png"
+            />
           </ion-avatar>
         </div>
         <ion-title>
-          <ion-note class="center-content">Big Smoke</ion-note>
+          <ion-note class="center-content">{{ userEmail }}</ion-note>
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -27,10 +35,16 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
+      <div id="logoutButtonContainer">
+        <ion-button color="danger" expand="block" (click)="logOut()">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Log out
+        </ion-button>
+      </div>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>
-  <ion-tabs>
+  <ion-tabs *ngIf="isLoggedIn">
     <ion-tab-bar slot="bottom">
       <ion-tab-button
         tab="home"
@@ -41,14 +55,14 @@
         <ion-label>Workouts</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button
+      <!-- <ion-tab-button
         tab="diary"
         routerLink="diary"
         routerLinkActive="activeLink"
       >
         <ion-icon name="book-outline"></ion-icon>
         <ion-label>Diary</ion-label>
-      </ion-tab-button>
+      </ion-tab-button> -->
 
       <ion-tab-button tab="me" routerLink="me" routerLinkActive="activeLink">
         <ion-icon name="person-circle-outline"></ion-icon>
