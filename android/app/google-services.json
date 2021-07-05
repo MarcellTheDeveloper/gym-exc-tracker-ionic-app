@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1044324985849",
+    "firebase_url": "https://gym-exercise-tracker-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "gym-exercise-tracker",
+    "storage_bucket": "gym-exercise-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044324985849:android:88ad741df9f2da9f8aeb28",
+        "android_client_info": {
+          "package_name": "com.extrack.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044324985849-e9ul4rf9meea98voaev2vr2t0uqqjtqg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.extrack.app",
+            "certificate_hash": "1d3e2028983640fd9546fb3ad8730ac40db45fc7"
+          }
+        },
+        {
+          "client_id": "1044324985849-64hatn1lhrlv16ou55tn7qsglmt6u5l5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiso5-kEGFtEtuxXgNYHlmeXb4erkgOe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044324985849-64hatn1lhrlv16ou55tn7qsglmt6u5l5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
