@@ -1,7 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>privateFrame</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu side="start" menuId="main-menu" contentId="main" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <div class="center-content">
+        <ion-avatar>
+          <img src="../assets/doomguy.png" />
+        </ion-avatar>
+      </div>
+      <ion-title>
+        <ion-note class="center-content">{{ userEmail }}</ion-note>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item routerLink="/private/home" routerLinkActive="activeLink">
+          <ion-icon name="barbell-outline" slot="start"></ion-icon>
+          <ion-label>Workout days</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/private/favourite-gyms" routerLinkActive="activeLink">
+          <ion-icon name="business-outline" slot="start"></ion-icon>
+          <ion-label>Favourite gyms</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+    <div id="logoutButtonContainer">
+      <ion-button color="danger" expand="block" (click)="logOut()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        Log out
+      </ion-button>
+    </div>
+  </ion-content>
+</ion-menu>
+dasdsa
+<ion-router-outlet id="main"></ion-router-outlet>
 
-<ion-content> </ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/private/home" routerLinkActive="activeLink">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <ion-label>Workouts</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button
+        tab="diary"
+        routerLink="diary"
+        routerLinkActive="activeLink"
+      >
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Diary</ion-label>
+      </ion-tab-button> -->
+
+    <ion-tab-button tab="me" routerLink="/private/me" routerLinkActive="activeLink">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-label>Me</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

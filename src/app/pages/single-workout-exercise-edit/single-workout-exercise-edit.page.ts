@@ -11,28 +11,31 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './single-workout-exercise-edit.page.html',
   styleUrls: ['./single-workout-exercise-edit.page.scss'],
 })
-export class SingleWorkoutExerciseEditPage implements OnInit {
+export class SingleWorkoutExerciseEditPage implements OnInit
+{
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
   oldExerciseValues: ExcerciseItem;
-  loader: boolean;
+  loader = false;
   constructor(
     private modalController: ModalController,
     private dayHandler: GymDayHandlerService,
     private alertController: AlertController,
     public fireStorage: AngularFireStorage,
     private capStorage: CapStorageService
-  ) {}
-  ngOnInit() {
+  ) { }
+  ngOnInit()
+  {
     this.exercise = { ...this.exercise };
     this.oldExerciseValues = { ...this.exercise };
   }
 
-  async onSaveExercise() {
+  async onSaveExercise()
+  {
     this.dayHandler.editExercise(
       this.day.toLocaleLowerCase(),
       // eslint-disable-next-line @typescript-eslint/dot-notation
-      this.oldExerciseValues['name'],
+      this.oldExerciseValues['id'],
       this.exercise
     );
 
@@ -40,7 +43,8 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
       dismissed: true,
     });
   }
-  takePicture = async () => {
+  takePicture = async () =>
+  {
     const image = await Camera.getPhoto({
       quality: 20,
       allowEditing: false,
@@ -53,7 +57,8 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
       .ref(`/images/${userId}`)
       .child(uuidv4())
       .putString(image.base64String, 'base64')
-      .then(async (snapshot) => {
+      .then(async (snapshot) =>
+      {
         this.exercise.img = await snapshot.ref.getDownloadURL();
         console.log(
           'Uploaded a base64 string!',
@@ -63,14 +68,16 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
       });
   };
 
-  async dismissModal() {
+  async dismissModal()
+  {
     if (
       this.exercise.name !== this.oldExerciseValues.name ||
       this.exercise.bodyPart !== this.oldExerciseValues.bodyPart ||
       this.exercise.reps !== this.oldExerciseValues.reps ||
       this.exercise.sets !== this.oldExerciseValues.sets ||
       this.exercise.weight !== this.oldExerciseValues.weight
-    ) {
+    )
+    {
       console.log(this.exercise, this.oldExerciseValues);
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
@@ -81,12 +88,13 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
             text: 'No i stay thanks',
             role: 'cancel',
             cssClass: 'noIDontBtn',
-            handler: () => {},
+            handler: () => { },
           },
           {
             text: 'Yes i do',
             cssClass: 'yesIDoBtn',
-            handler: () => {
+            handler: () =>
+            {
               this.exercise = this.oldExerciseValues;
               this.modalController.dismiss({
                 dismissed: true,
@@ -97,7 +105,8 @@ export class SingleWorkoutExerciseEditPage implements OnInit {
       });
 
       await alert.present();
-    } else {
+    } else
+    {
       this.modalController.dismiss({
         dismissed: true,
       });

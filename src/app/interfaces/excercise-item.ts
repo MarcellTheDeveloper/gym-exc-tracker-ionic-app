@@ -1,6 +1,8 @@
 import { SafeResourceUrl } from '@angular/platform-browser';
 
-export interface ExcerciseItem {
+export interface ExcerciseItem
+{
+  id: string;
   name: string;
   bodyPart: string;
   sets: number;

@@ -8,30 +8,43 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit
+{
+  loginDetails = {
+    email: '',
+    password: '',
+  };
+
+  loginError;
   constructor(
     public fireAuthService: FireAuthService,
     private capStorage: CapStorageService,
     private router: Router
-  ) {}
+  ) { }
 
-  async ngOnInit() {
+  async ngOnInit()
+  {
     const isLoggedIn = await this.capStorage.getIsLoggedIn();
-    if (isLoggedIn) {
-      this.router.navigate(['/home']);
+    if (isLoggedIn)
+    {
+      this.router.navigate(['private/home']);
     }
   }
 
-  signInWithEmail(email: any, password: any) {
-    this.fireAuthService.signin(email, password);
+  async signInWithEmail()
+  {
+    this.loginError = await this.fireAuthService.signin(this.loginDetails.email, this.loginDetails.password);
+    this.loginDetails = {
+      email: '',
+      password: '',
+    };
   }
-  async signInWithGoogle() {
+  async signInWithGoogle()
+  {
     this.fireAuthService.loginWithGoogle();
   }
-  logOut() {
-    this.fireAuthService.logout();
-  }
-  async isLoggedIn() {
+  async isLoggedIn()
+  {
     this.fireAuthService.getIsLoggedIn();
   }
 }

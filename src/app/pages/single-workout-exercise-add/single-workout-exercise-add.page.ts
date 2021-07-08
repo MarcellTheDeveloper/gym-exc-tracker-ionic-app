@@ -19,6 +19,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
   activeCurrentDaySub;
   loader = false;
   formValues: ExcerciseItem = {
+    id: uuidv4(),
     name: '',
     bodyPart: '',
     sets: 0,
@@ -28,7 +29,6 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
   };
   constructor(
     private dayHandler: GymDayHandlerService,
-    private router: Router,
     public alertController: AlertController,
     private modalController: ModalController,
     public sanitizer: DomSanitizer,
@@ -71,6 +71,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
             handler: () =>
             {
               this.formValues = {
+                id: '',
                 name: '',
                 bodyPart: '',
                 sets: 0,
@@ -91,6 +92,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     } else
     {
       this.formValues = {
+        id: '',
         name: '',
         bodyPart: '',
         sets: 0,
@@ -154,6 +156,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     {
       this.dayHandler.addExercise(this.day.toLowerCase(), this.formValues);
       this.formValues = {
+        id: this.formValues.id,
         name: '',
         bodyPart: '',
         sets: 0,

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PrivateFramePageRoutingModule } from './private-frame-routing.module';
+import { TestPagePageRoutingModule } from './test-page-routing.module';
 
-import { PrivateFramePage } from './private-frame.page';
+import { TestPagePage } from './test-page.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrivateFramePageRoutingModule
+    TestPagePageRoutingModule
   ],
-  declarations: [PrivateFramePage]
+  declarations: [TestPagePage]
 })
-export class PrivateFramePageModule {}
+export class TestPagePageModule {}

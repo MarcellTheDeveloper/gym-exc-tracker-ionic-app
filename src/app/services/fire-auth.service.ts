@@ -8,20 +8,24 @@ import { Storage } from '@capacitor/storage';
 @Injectable({
   providedIn: 'root',
 })
-export class FireAuthService {
+export class FireAuthService
+{
   isLoggedIn: boolean;
   userEmail: string;
   userId: string;
   loggedInEmitter = new Subject<boolean>();
   emailAndIdInEmitter = new Subject<any>();
 
-  constructor(public firebaseAuth: AngularFireAuth, public router: Router) {}
+  constructor(public firebaseAuth: AngularFireAuth, public router: Router) { }
 
   //sign in with email password
-  async signin(email: string, password: string) {
+  async signin(email: string, password: string)
+  {
+    let error = '';
     await this.firebaseAuth
       .signInWithEmailAndPassword(email, password)
-      .then(async (res) => {
+      .then(async (res) =>
+      {
         this.userId = res.user.uid;
         this.userEmail = res.user.email;
         this.isLoggedIn = true;
@@ -43,17 +47,23 @@ export class FireAuthService {
           key: 'userId',
           value: res.user.uid,
         });
-        this.router.navigate(['/home']).then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(['private/home']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => error = err.message);
+
+    if (error)
+    {
+      return error;
+    }
   }
   //sign up with email password
-  async signup(email: string, password: string) {
+  async signup(email: string, password: string)
+  {
+    let error = '';
     await this.firebaseAuth
       .createUserWithEmailAndPassword(email, password)
-      .then(async (res) => {
+      .then(async (res) =>
+      {
         this.userId = res.user.uid;
         this.userEmail = res.user.email;
         this.isLoggedIn = true;
@@ -75,24 +85,27 @@ export class FireAuthService {
           key: 'userId',
           value: res.user.uid,
         });
-        this.router.navigate(['/home']).then(() => {
-          window.location.reload();
-        });
+        this.router.navigate(['private/home']);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => error = err.message);
+
+    if (error)
+    {
+      return error;
+    }
   }
   //logout
-  async logout() {
+  async logout()
+  {
     await Storage.remove({ key: 'userId' });
     await Storage.remove({ key: 'userEmail' });
     await Storage.remove({ key: 'userId' });
     this.firebaseAuth.signOut();
-    this.router.navigate(['/login']).then(() => {
-      window.location.reload();
-    });
+    this.router.navigate(['public/login']);
   }
   //check if a user is logged in
-  async getIsLoggedIn() {
+  async getIsLoggedIn()
+  {
     const id = await Storage.get({ key: 'userId' });
     const userId = JSON.parse(id.value);
 
@@ -101,10 +114,13 @@ export class FireAuthService {
     return id;
   }
   //auth with google
-  async loginWithGoogle() {
+  async loginWithGoogle()
+  {
+
     await this.firebaseAuth
       .signInWithPopup(new firebase.default.auth.GoogleAuthProvider())
-      .then(async (res) => {
+      .then(async (res) =>
+      {
         console.log('succesfully google auth', res);
         this.userId = res.user.uid;
         this.userEmail = res.user.email;
@@ -126,7 +142,8 @@ export class FireAuthService {
           key: 'userId',
           value: res.user.uid,
         });
-        this.router.navigate(['/home']).then(() => {
+        this.router.navigate(['private/home']).then(() =>
+        {
           window.location.reload();
         });
       })

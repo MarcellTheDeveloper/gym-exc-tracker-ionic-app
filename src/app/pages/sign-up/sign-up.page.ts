@@ -6,11 +6,22 @@ import { FireAuthService } from 'src/app/services/fire-auth.service';
   templateUrl: './sign-up.page.html',
   styleUrls: ['./sign-up.page.scss'],
 })
-export class SignUpPage implements OnInit {
-  constructor(public fireAuth: FireAuthService) {}
+export class SignUpPage implements OnInit
+{
+  signupDetails = {
+    email: '',
+    password: '',
+  };
+  loginError;
+  constructor(public fireAuth: FireAuthService) { }
 
-  ngOnInit() {}
-  signUpWithEmail(email: any, password: any) {
-    this.fireAuth.signup(email, password);
+  ngOnInit() { }
+  async signUpWithEmail()
+  {
+    this.loginError = await this.fireAuth.signup(this.signupDetails.email, this.signupDetails.password);
+    this.signupDetails = {
+      email: '',
+      password: '',
+    };
   }
 }

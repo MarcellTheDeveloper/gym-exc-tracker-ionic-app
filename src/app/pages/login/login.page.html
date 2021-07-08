@@ -1,30 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Sign in</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div id="container">
-    <ion-input placeholder="Email" type="email" required #email></ion-input>
-    <ion-input
-      placeholder="Password"
-      type="password"
-      required
-      #password
-    ></ion-input>
-    <ion-button
-      expand="block"
-      color="primary"
-      (click)="signInWithEmail(email.value, password.value)"
-      ><ion-icon slot="start" name="log-in-outline" color=""></ion-icon>Sign in
-      with email</ion-button
-    >
-    <ion-button expand="block" color="danger" (click)="signInWithGoogle()"
+    <img src="../../../assets/extrack-logo.png" alt="">
+    <ion-input placeholder="Email" type="email" required [(ngModel)]="loginDetails.email"></ion-input>
+    <ion-input placeholder="Password" type="password" required [(ngModel)]="loginDetails.password"></ion-input>
+    <ion-button expand="block" color="primary" (click)="signInWithEmail()">
+      <ion-icon slot="start" name="log-in-outline" color=""></ion-icon>Sign in
+    </ion-button>
+    <p class="errorMessage" *ngIf="loginError">{{loginError}}</p>
+    <!-- <ion-button expand="block" color="danger" (click)="signInWithGoogle()"
       ><ion-icon slot="start" name="logo-google" color=""></ion-icon>Sign in
       with Google</ion-button
-    >
-    <p>Don't have an account? <a routerLink="/sign-up">Sign up!</a></p>
+    > -->
+    <p>Don't have an account? <a routerLink="/public/sign-up">Sign up!</a></p>
   </div>
 </ion-content>
 <!-- <ion-button color="primary" (click)="logOut()"

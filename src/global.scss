@@ -76,5 +76,25 @@
      * https://github.com/ionic-team/ionic/issues/18734
      */
     min-height: 1px !important;
+	margin-top:1px !important;
   }
+}
+
+:root {
+  img {
+    /** 
+     * Bug fix for:
+     * https://github.com/ionic-team/ionic/issues/18734
+     */
+    min-height: 1px !important;
+	margin-top:1px !important;
+  }
+}
+img {
+    /** 
+     * Bug fix for:
+     * https://github.com/ionic-team/ionic/issues/18734
+     */
+    min-height: 1px !important;
+	margin-top:1px !important;
 }

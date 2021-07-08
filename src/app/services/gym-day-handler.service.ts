@@ -8,7 +8,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root',
 })
-export class GymDayHandlerService {
+export class GymDayHandlerService
+{
   subject = new Subject<any>();
   emitNewExcDayList = new Subject<any>();
   activeCurrentDay = new Subject<string>();
@@ -27,28 +28,34 @@ export class GymDayHandlerService {
     private db: AngularFirestore,
     public capStorage: CapStorageService,
     private fireDbService: FireDbService
-  ) {}
+  ) { }
 
-  updateExercisesByDayFromDb(udpatedExc) {
+  updateExercisesByDayFromDb(udpatedExc)
+  {
     console.log('gymday', udpatedExc);
     this.exercisesByDay = udpatedExc;
   }
 
-  getExercisesByDay() {
+  getExercisesByDay()
+  {
     console.log('dsadasda', this.exercisesByDay);
     return this.exercisesByDay;
   }
 
-  async addExercise(day: string, exc: ExcerciseItem) {
+  async addExercise(day: string, exc: ExcerciseItem)
+  {
     await this.exercisesByDay[day].push(exc);
     const userId = await this.capStorage.getUserId();
     this.fireDbService.reSetExercises(this.exercisesByDay, userId);
   }
 
-  async editExercise(day: string, oldExerciseName, newExercise) {
+  async editExercise(day: string, oldExerciseId, newExercise)
+  {
     // eslint-disable-next-line @typescript-eslint/prefer-for-of
-    for (let i = 0; i < this.exercisesByDay[day].length; i++) {
-      if (this.exercisesByDay[day][i].name === oldExerciseName) {
+    for (let i = 0; i < this.exercisesByDay[day].length; i++)
+    {
+      if (this.exercisesByDay[day][i].id === oldExerciseId)
+      {
         this.exercisesByDay[day][i] = newExercise;
       }
     }
@@ -56,10 +63,11 @@ export class GymDayHandlerService {
     this.fireDbService.reSetExercises(this.exercisesByDay, userId);
   }
 
-  async deleteExercise(day: string, name: string) {
+  async deleteExercise(day: string, id: string)
+  {
     this.exercisesByDay[day] = this.exercisesByDay[day].filter(
       // eslint-disable-next-line @typescript-eslint/dot-notation
-      (exercise: any) => exercise['name'] !== name
+      (exercise: any) => exercise['id'] !== id
     );
     // return this.emitNewExcDayList.next(this.exercisesByDay);
     const userId = await this.capStorage.getUserId();

@@ -1,66 +1,19 @@
 /* eslint-disable max-len */
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PublicFramePage } from './pages/public-frame/public-frame.page';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'public',
     loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomePageModule),
+      import('./pages/public-frame/public-frame.module').then((m) => m.PublicFramePageModule),
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    path: 'private',
+    loadChildren: () => import('./pages/private-frame/private-frame.module').then(m => m.PrivateFramePageModule)
   },
-  {
-    path: 'favourite-gyms',
-    loadChildren: () =>
-      import('./pages/favourite-gyms/favourite-gyms.module').then(
-        (m) => m.FavouriteGymsPageModule
-      ),
-  },
-  {
-    path: 'single-workout-exercise-edit',
-    loadChildren: () =>
-      import(
-        './pages/single-workout-exercise-edit/single-workout-exercise-edit.module'
-      ).then((m) => m.SingleWorkoutExerciseEditPageModule),
-  },
-  {
-    path: 'single-workout-exercise-add',
-    loadChildren: () =>
-      import(
-        './pages/single-workout-exercise-add/single-workout-exercise-add.module'
-      ).then((m) => m.SingleWorkoutExerciseAddPageModule),
-  },
-  {
-    path: 'single-workout-exercise-open',
-    loadChildren: () =>
-      import(
-        './pages/single-workout-exercise-open/single-workout-exercise-open.module'
-      ).then((m) => m.SingleWorkoutExerciseOpenPageModule),
-  },
-  {
-    path: 'me',
-    loadChildren: () =>
-      import('./pages/me/me.module').then((m) => m.MePageModule),
-  },
-  {
-    path: 'diary',
-    loadChildren: () =>
-      import('./pages/diary/diary.module').then((m) => m.DiaryPageModule),
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginPageModule),
-  },
-  {
-    path: 'sign-up',
-    loadChildren: () =>
-      import('./pages/sign-up/sign-up.module').then((m) => m.SignUpPageModule),
-  },
+
 ];
 
 @NgModule({
@@ -69,4 +22,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

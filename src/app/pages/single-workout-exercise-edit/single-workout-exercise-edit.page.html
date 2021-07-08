@@ -23,11 +23,11 @@
 
 <ion-content>
   <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
-  <ion-img
+  <img
     [src]="exercise['img']"
     *ngIf="exercise['img'].length !== 0 && !loader"
     class="minHeight1px"
-  ></ion-img>
+  >
   <ion-list>
     <ion-item>
       <ion-button color="primary" (click)="takePicture()"

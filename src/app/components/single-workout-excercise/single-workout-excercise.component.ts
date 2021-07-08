@@ -10,7 +10,8 @@ import { SingleWorkoutExerciseEditPage } from 'src/app/pages/single-workout-exer
   templateUrl: './single-workout-excercise.component.html',
   styleUrls: ['./single-workout-excercise.component.scss'],
 })
-export class SingleWorkoutExcerciseComponent implements OnInit {
+export class SingleWorkoutExcerciseComponent implements OnInit
+{
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
   constructor(
@@ -18,10 +19,12 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
     public modalController: ModalController,
     public actionSheetController: ActionSheetController,
     public alertController: AlertController
-  ) {}
+  ) { }
 
-  ngOnInit() {}
-  async openSingleWorkout() {
+  ngOnInit() { }
+  async openSingleWorkout()
+  {
+    console.log(this.exercise);
     const modal = await this.modalController.create({
       component: SingleWorkoutExerciseOpenPage,
       cssClass: 'my-custom-class',
@@ -33,7 +36,8 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
     return await modal.present();
   }
 
-  async onClickSettings() {
+  async onClickSettings()
+  {
     const actionSheet = await this.actionSheetController.create({
       header: 'Settings',
       cssClass: 'my-custom-class',
@@ -42,11 +46,12 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
           text: 'Edit exercise',
           icon: 'create-outline',
           cssClass: 'actionSheetEditBtn',
-          handler: async () => {
+          handler: async () =>
+          {
             const modal = await this.modalController.create({
               component: SingleWorkoutExerciseEditPage,
               componentProps: {
-                exercise: this.exercise,
+                exercise: await this.exercise,
                 day: this.day,
               },
             });
@@ -57,7 +62,8 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
           text: 'Delete',
           icon: 'trash-outline',
           cssClass: 'actionSheetDeleteBtn',
-          handler: async () => {
+          handler: async () =>
+          {
             const alert = await this.alertController.create({
               cssClass: 'my-custom-class',
               header: 'Confirm',
@@ -67,15 +73,16 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
                   text: 'No i changed my mind',
                   role: 'cancel',
                   cssClass: 'noIDontBtn',
-                  handler: () => {},
+                  handler: () => { },
                 },
                 {
                   text: 'Yes i do!',
                   cssClass: 'yesIDoBtn',
-                  handler: () => {
+                  handler: () =>
+                  {
                     this.dayHandler.deleteExercise(
                       this.day.toLocaleLowerCase(),
-                      this.exercise.name
+                      this.exercise.id
                     );
                   },
                 },
@@ -89,7 +96,8 @@ export class SingleWorkoutExcerciseComponent implements OnInit {
           text: 'Cancel',
           icon: 'close-outline',
           role: 'cancel',
-          handler: () => {
+          handler: () =>
+          {
             console.log('Cancel clicked');
           },
         },
