@@ -5,16 +5,20 @@
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle class="ion-text-center">Exercises</ion-card-subtitle>
+      <div class="center-content">
+        <span *ngFor="let bodyPart of dailyBodyParts" class="singleBodyPart">{{bodyPart}}</span>
+      </div>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
+      <ion-reorder-group (ionItemReorder)="reorderList($event)" disabled="false">
         <ion-item *ngFor="let exc of exercise" class="center-content">
-          <app-single-workout-excercise
-            [exercise]="exc"
-            [day]="day"
-          ></app-single-workout-excercise>
+
+          <app-single-workout-excercise [exercise]="exc" [day]="day">
+          </app-single-workout-excercise>
+          <ion-reorder class="reordeIcon">
+          </ion-reorder>
         </ion-item>
-      </ion-list>
+      </ion-reorder-group>
       <div class="center-content addButton">
         <ion-button (click)="addExc()" color="primary">
           <ion-icon name="add-outline"></ion-icon>

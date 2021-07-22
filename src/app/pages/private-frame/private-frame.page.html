@@ -12,7 +12,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list>
+    <ion-list class="ion-list">
       <ion-menu-toggle>
         <ion-item routerLink="/private/home" routerLinkActive="activeLink">
           <ion-icon name="barbell-outline" slot="start"></ion-icon>
@@ -25,13 +25,14 @@
           <ion-label>Favourite gyms</ion-label>
         </ion-item>
       </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-button color="danger" expand="block" (click)="logOut()">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Log out
+        </ion-button>
+      </ion-menu-toggle>
     </ion-list>
-    <div id="logoutButtonContainer">
-      <ion-button color="danger" expand="block" (click)="logOut()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        Log out
-      </ion-button>
-    </div>
+
   </ion-content>
 </ion-menu>
 dasdsa

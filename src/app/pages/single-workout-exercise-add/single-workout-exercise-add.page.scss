@@ -15,11 +15,12 @@
 .reqStar {
   color: var(--ion-color-danger);
 }
-ion-label {
-  min-width: 120px !important;
-}
+// ion-label {
+
+//   max-width: 20px !important;
+// }
 img {
-    /** 
+    /**
      * Bug fix for:
      * https://github.com/ionic-team/ionic/issues/18734
      */

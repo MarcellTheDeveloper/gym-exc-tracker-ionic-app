@@ -1,21 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button
-      color="primary"
-      slot="start"
-      class="navButton"
-      (click)="dismissModal()"
-    >
+    <ion-button color="primary" slot="start" class="navButton" (click)="dismissModal()">
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
     <ion-title class="ion-text-center">Edit exercise</ion-title>
-    <ion-button
-      color="primary"
-      slot="end"
-      class="navButton"
-      (click)="onSaveExercise()"
-      color="secondary"
-    >
+    <ion-button color="primary" slot="end" class="navButton" (click)="onSaveExercise()" color="secondary">
       <ion-icon name="save-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -23,17 +12,13 @@
 
 <ion-content>
   <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
-  <img
-    [src]="exercise['img']"
-    *ngIf="exercise['img'].length !== 0 && !loader"
-    class="minHeight1px"
-  >
+  <img [src]="exercise['img']" *ngIf="exercise['img'].length !== 0 && !loader" class="minHeight1px">
   <ion-list>
     <ion-item>
-      <ion-button color="primary" (click)="takePicture()"
-        ><ion-icon name="swap-vertical-outline"></ion-icon>Change
-        image</ion-button
-      >
+      <ion-button color="primary" (click)="takePicture()">
+        <ion-icon name="swap-vertical-outline"></ion-icon>Change
+        image
+      </ion-button>
     </ion-item>
     <ion-item>
       <ion-icon name="reader-outline" slot="start"></ion-icon>
@@ -66,9 +51,27 @@
     <ion-item>
       <ion-icon name="barbell-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Weight (kg)</ion-card-subtitle>
+        <ion-card-subtitle>Weight</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['weight']"></ion-input>
       </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+
+      <div>
+        <ion-card-subtitle>Unit</ion-card-subtitle>
+        <ion-select [placeholder]="exercise['unit']" [(ngModel)]="exercise['unit']">
+          <ion-select-option value="kg">kg</ion-select-option>
+          <ion-select-option value="lbs">lbs</ion-select-option>
+          <ion-select-option value="other">other</ion-select-option>
+        </ion-select>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="document-text-outline" slot="start"></ion-icon>
+      <ion-textarea rows="5" placeholder="Add description and other informations here..."
+        [(ngModel)]="exercise['desc']">
+      </ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>

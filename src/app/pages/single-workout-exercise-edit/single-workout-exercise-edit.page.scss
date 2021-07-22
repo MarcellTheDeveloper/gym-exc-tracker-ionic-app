@@ -1,8 +1,16 @@
 img {
-    /** 
+    /**
      * Bug fix for:
      * https://github.com/ionic-team/ionic/issues/18734
      */
     min-height: 1px !important;
 	margin-top:1px !important;
+}
+
+ion-select{
+  min-width:100px !important;
+  padding-left:0px !important;
+}
+select-text{
+  min-width:100px !important;
 }

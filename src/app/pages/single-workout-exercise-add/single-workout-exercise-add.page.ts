@@ -26,6 +26,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     reps: 0,
     weight: 0,
     img: '',
+    desc: '',
+    unit: 'kg'
   };
   constructor(
     private dayHandler: GymDayHandlerService,
@@ -50,8 +52,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
       this.formValues.reps ||
       this.formValues.sets ||
       this.formValues.weight ||
-      this.formValues.img
-
+      this.formValues.img ||
+      this.formValues.desc
     )
     {
       const alert = await this.alertController.create({
@@ -99,6 +101,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
         reps: 0,
         weight: 0,
         img: '',
+        desc: '',
+        unit: 'kg'
       };
       this.modalController.dismiss({
         dismissed: true,
@@ -163,6 +167,8 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
         reps: 0,
         weight: 0,
         img: '',
+        desc: '',
+        unit: 'kg'
       };
       this.modalController.dismiss({
         dismissed: true,

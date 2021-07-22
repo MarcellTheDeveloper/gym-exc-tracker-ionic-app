@@ -1,6 +1,6 @@
 import { SingleWorkoutExerciseOpenPage } from './../../pages/single-workout-exercise-open/single-workout-exercise-open.page';
 import { ExcerciseItem } from './../../interfaces/excercise-item';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { GymDayHandlerService } from './../../services/gym-day-handler.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
@@ -10,10 +10,11 @@ import { SingleWorkoutExerciseEditPage } from 'src/app/pages/single-workout-exer
   templateUrl: './single-workout-excercise.component.html',
   styleUrls: ['./single-workout-excercise.component.scss'],
 })
-export class SingleWorkoutExcerciseComponent implements OnInit
+export class SingleWorkoutExcerciseComponent implements OnInit, OnChanges
 {
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
+  loader = false;
   constructor(
     private dayHandler: GymDayHandlerService,
     public modalController: ModalController,
@@ -21,10 +22,16 @@ export class SingleWorkoutExcerciseComponent implements OnInit
     public alertController: AlertController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit()
+  {
+
+  }
+  ngOnChanges()
+  {
+    this.loader = true;
+  }
   async openSingleWorkout()
   {
-    console.log(this.exercise);
     const modal = await this.modalController.create({
       component: SingleWorkoutExerciseOpenPage,
       cssClass: 'my-custom-class',

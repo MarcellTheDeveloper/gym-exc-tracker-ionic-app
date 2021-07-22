@@ -73,4 +73,12 @@ export class GymDayHandlerService
     const userId = await this.capStorage.getUserId();
     this.fireDbService.reSetExercises(this.exercisesByDay, userId);
   }
+
+  async reOrderExercises(day: string, exercises: any)
+  {
+    const getDay = day.toLowerCase();
+    this.exercisesByDay[getDay] = exercises;
+    const userId = await this.capStorage.getUserId();
+    this.fireDbService.reSetExercises(this.exercisesByDay, userId);
+  }
 }

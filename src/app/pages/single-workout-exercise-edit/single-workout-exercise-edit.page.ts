@@ -75,7 +75,8 @@ export class SingleWorkoutExerciseEditPage implements OnInit
       this.exercise.bodyPart !== this.oldExerciseValues.bodyPart ||
       this.exercise.reps !== this.oldExerciseValues.reps ||
       this.exercise.sets !== this.oldExerciseValues.sets ||
-      this.exercise.weight !== this.oldExerciseValues.weight
+      this.exercise.weight !== this.oldExerciseValues.weight ||
+      this.exercise.desc !== this.oldExerciseValues.desc
     )
     {
       console.log(this.exercise, this.oldExerciseValues);

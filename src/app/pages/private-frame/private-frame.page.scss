@@ -4,3 +4,14 @@
   width: 100%;
   padding: 20px;
 }
+.ion-list{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  ion-menu-toggle:last-of-type{
+    margin-top: auto;
+    ion-button{
+      margin:0px 20px;
+    }
+  }
+}

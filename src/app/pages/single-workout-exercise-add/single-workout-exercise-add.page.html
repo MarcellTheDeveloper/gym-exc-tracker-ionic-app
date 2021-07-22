@@ -1,20 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button
-      color="primary"
-      slot="start"
-      class="navButton"
-      (click)="goBackToHomePage()"
-    >
+    <ion-button color="primary" slot="start" class="navButton" (click)="goBackToHomePage()">
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
     <ion-title class="ion-text-center">{{ day}}</ion-title>
-    <ion-button
-      color="secondary"
-      slot="end"
-      class="navButton"
-      (click)="saveExercise()"
-    >
+    <ion-button color="secondary" slot="end" class="navButton" (click)="saveExercise()">
       <ion-icon name="save-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -35,84 +25,52 @@
 
   <ion-item>
     <ion-label position="fixed"><span class="reqStar"> *</span>Sets:</ion-label>
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('sets',false)"
-    >
+    <ion-button color="primary" class="navButton" (click)="valueChanger('sets',false)">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input
-      type="number"
-      [(ngModel)]="formValues['sets']"
-      class="excInput"
-    ></ion-input>
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('sets',true)"
-    >
+    <ion-input type="number" [(ngModel)]="formValues['sets']" class="excInput"></ion-input>
+    <ion-button color="primary" class="navButton" (click)="valueChanger('sets',true)">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
     <ion-label position="fixed"><span class="reqStar"> *</span>Reps:</ion-label>
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('reps',false)"
-    >
+    <ion-button color="primary" class="navButton" (click)="valueChanger('reps',false)">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input
-      type="number"
-      [(ngModel)]="formValues['reps']"
-      class="excInput"
-    ></ion-input>
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('reps',true)"
-    >
+    <ion-input type="number" [(ngModel)]="formValues['reps']" class="excInput"></ion-input>
+    <ion-button color="primary" class="navButton" (click)="valueChanger('reps',true)">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed"
-      ><span class="reqStar"> *</span>Weight{{"(kg)"}}:</ion-label
-    >
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('weight',false)"
-    >
+    <span class="reqStar"> *</span>Weight
+    (<ion-select [placeholder]="formValues.unit" [(ngModel)]="formValues['unit']">
+      <ion-select-option value="kg">kg</ion-select-option>
+      <ion-select-option value="lbs">lbs</ion-select-option>
+      <ion-select-option value="other">other</ion-select-option>
+    </ion-select>)
+    <ion-button color="primary" class="navButton" (click)="valueChanger('weight',false)">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
-    <ion-input
-      type="number"
-      class="excInput"
-      [(ngModel)]="formValues['weight']"
-    >
+    <ion-input type="number" class="excInput" [(ngModel)]="formValues['weight']">
     </ion-input>
-    <ion-button
-      color="primary"
-      class="navButton"
-      (click)="valueChanger('weight',true)"
-    >
+    <ion-button color="primary" class="navButton" (click)="valueChanger('weight',true)">
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-item>
   <ion-item>
-    <ion-button color="primary" (click)="takePicture()"
-      ><ion-icon name="add-outline"></ion-icon>Upload image</ion-button
-    >
+    <ion-textarea rows="5" placeholder="Add description and other informations here..."
+      [(ngModel)]="formValues['desc']">
+    </ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" (click)="takePicture()">
+      <ion-icon name="add-outline"></ion-icon>Upload image
+    </ion-button>
   </ion-item>
   <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
-  <img
-    [src]="formValues.img"
-    *ngIf="formValues.img"
-    class="minHeight1px"
-  >
+  <img [src]="formValues.img" *ngIf="formValues.img" class="minHeight1px">
 </ion-content>

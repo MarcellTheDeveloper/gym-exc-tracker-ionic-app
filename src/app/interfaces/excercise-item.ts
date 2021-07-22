@@ -9,4 +9,6 @@ export interface ExcerciseItem
   reps: number;
   weight: number;
   img: any;
+  desc?: any;
+  unit?: string;
 }

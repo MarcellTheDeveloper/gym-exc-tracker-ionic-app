@@ -1,19 +1,18 @@
 <div class="exerciseContainer">
   <div class="exerciseContainerWithoutButton" (click)="openSingleWorkout()">
-    <div>
+    <div class="imageDiv">
       <ion-avatar slot="start">
-        <ion-img
-          [src]="exercise['img']"
-          *ngIf="exercise['img'].length !== 0"
-          class="minHeight1px"
-        ></ion-img>
+        <ion-img [src]="exercise['img']" *ngIf="exercise['img'].length !== 0" class="minHeight1px"></ion-img>
       </ion-avatar>
     </div>
-    <div>
+    <div class="exerciseContainer">
       <p class="exerciseName">{{ exercise["name"] }}</p>
     </div>
-    <p>{{ exercise["sets"] }}x{{ exercise["reps"] }}</p>
-    <p>{{ exercise["weight"] }} kg</p>
+    <div class="setsRepsWeightUnitContainer">
+      <p class="setsRepsNumber">{{ exercise["sets"] }}x{{ exercise["reps"] }}</p>
+      <p class="weightUnitNumber" *ngIf="exercise['unit']">{{ exercise["weight"] }} {{exercise['unit']}}</p>
+      <p class="weightUnitNumber" *ngIf="!exercise['unit']">{{ exercise["weight"] }} kg</p>
+    </div>
   </div>
   <ion-button color="primary" (click)="onClickSettings()" color="secondary">
     <ion-icon name="settings-outline"></ion-icon>

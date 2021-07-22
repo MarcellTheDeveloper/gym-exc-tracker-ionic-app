@@ -25,14 +25,8 @@ export class PrivateFramePage implements OnInit
   ) { }
   async ngOnInit()
   {
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      message: 'Please wait...',
-      duration: 200,
-    });
-    await loading.present();
     this.userEmail = await this.capStorage.getUserEmail();
-    const { role, data } = await loading.onDidDismiss();
+
   }
 
   logOut()
