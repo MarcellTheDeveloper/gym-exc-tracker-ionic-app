@@ -52,7 +52,8 @@
       [(ngModel)]="formValues['unit']">
       <ion-select-option value="kg">kg</ion-select-option>
       <ion-select-option value="lbs">lbs</ion-select-option>
-      <ion-select-option value="other">{{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
+      <ion-select-option [value]="language['singleExerciseLabels']['otherWeightType']">
+        {{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
     </ion-select>)
     <ion-button color="primary" class="navButton" (click)="valueChanger('weight',false)">
       <ion-icon name="remove-outline"></ion-icon>

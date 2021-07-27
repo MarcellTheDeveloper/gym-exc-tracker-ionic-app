@@ -1,0 +1,4 @@
+com/extrack/app/MainActivity.java
+ com.extrack.app.MainActivity
+com/extrack/app/BuildConfig.java
+ com.extrack.app.BuildConfig

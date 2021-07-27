@@ -83,7 +83,8 @@
           [(ngModel)]="exercise['unit']">
           <ion-select-option value="kg">kg</ion-select-option>
           <ion-select-option value="lbs">lbs</ion-select-option>
-          <ion-select-option value="other">{{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
+          <ion-select-option [value]="language['singleExerciseLabels']['otherWeightType']">
+            {{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
         </ion-select>
       </div>
     </ion-item>

@@ -1,0 +1,253 @@
+-- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:27:9-35:20
+	android:grantUriPermissions
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:31:13-47
+	android:authorities
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:29:13-64
+	android:exported
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:28:13-62
+manifest
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+MERGED from [:capacitor-app] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:capacitor-haptics] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:capacitor-keyboard] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:capacitor-status-bar] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:capacitor-storage] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:capacitor-android] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e0dc4e9d390ee30ead0ebc94095335c3\transformed\material-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\jeney.marcell\.gradle\caches\transforms-3\12182bdc068b4afa885db253f949e25c\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cb4f6ffab975f3feed9a4ff6d4b5da24\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\bd569dd761fa75e69166aab8e8806d00\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cd038e6529328cfab7fac916125b56d7\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9dfe5e82a554c572da4cacf8501afec4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\7b36cef88e7ecc9ed78024141f9ec76e\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\243c598e14e7acd1b93ba58ebfa21737\transformed\fragment-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\fc19df349c1825f0c247887fbd213783\transformed\jetified-activity-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9ca4a97380678d5590b2436da27b403a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\af8b09d2cf351cafb7a46f49e4e28bc6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6032632c6a951bbe907874d963338b9e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\1ecfd293fdeaffe61acaeb0b584a251c\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cbbd58b7762a1b3a12d5321ad29f4d39\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b04307646cdd5735ba56d95d607b72e4\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\aa0343153006e444c0e53a9f6e63bfc8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b38b2d93a184d06b94dbcf6ccfb2ae49\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\d24466c01f421ae9dde2ba4b46a44d5f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b133edea6de19c1bf97136940449430a\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8a0344c0aebe38a41c0d2ccd67bfef90\transformed\exifinterface-1.3.2\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\738ce9b2c90ea831b22f91ad9d75674f\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6f0b4160733c8d5c6a46161af459d84a\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e786a25b57d07ce707f8fdf36f3aec32\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e1a19b0e773bac5c51ddaff4515cc5d9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8b0b6c2cdc33c67fd0666bce5ff648c8\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\160440b6cf9ef619ddd0c604fd9228dc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b9a59422db34ad2a2be3bc934b1fec63\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6041d291aac8e79c1ede0e0333b5f71a\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\f3a86c9bb86a07359f1ef34dc907945a\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\48201e72b53950870d75bcfbddfdd260\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\c8521bb990182a2b1a79482a3e625a5d\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3a3548fd213cde1f4e3369028932819c\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\be554c61bccd07d0de9a530e3cded1ce\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\323c8889fa9eccd3b918c10ee6e37b80\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.apache.cordova:framework:7.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\a2dc3c28d0baa13bb18be37d09c1839f\transformed\jetified-framework-7.0.0\AndroidManifest.xml:20:1-27:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b0aef08968475b0e7c37486d12af8f4c\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:1-41:12
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:5:5-36:19
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e0dc4e9d390ee30ead0ebc94095335c3\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e0dc4e9d390ee30ead0ebc94095335c3\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\jeney.marcell\.gradle\caches\transforms-3\12182bdc068b4afa885db253f949e25c\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\jeney.marcell\.gradle\caches\transforms-3\12182bdc068b4afa885db253f949e25c\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-11:19
+MERGED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\738ce9b2c90ea831b22f91ad9d75674f\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\738ce9b2c90ea831b22f91ad9d75674f\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.extrack.app.MainActivity
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:13:9-25:20
+	android:label
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:16:13-56
+	android:launchMode
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:18:13-44
+	android:configChanges
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:14:13-129
+	android:theme
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:17:13-62
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:15:13-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:20:13-23:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:22:27-74
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:40:5-67
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:40:22-64
+uses-sdk
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+MERGED from [:capacitor-app] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-app] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-haptics] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-haptics] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-keyboard] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-keyboard] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\keyboard\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-status-bar] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-status-bar] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\status-bar\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-storage] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-storage] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-android] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:capacitor-android] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e0dc4e9d390ee30ead0ebc94095335c3\transformed\material-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e0dc4e9d390ee30ead0ebc94095335c3\transformed\material-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\jeney.marcell\.gradle\caches\transforms-3\12182bdc068b4afa885db253f949e25c\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\jeney.marcell\.gradle\caches\transforms-3\12182bdc068b4afa885db253f949e25c\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cb4f6ffab975f3feed9a4ff6d4b5da24\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cb4f6ffab975f3feed9a4ff6d4b5da24\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:capacitor-cordova-android-plugins] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\bd569dd761fa75e69166aab8e8806d00\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\bd569dd761fa75e69166aab8e8806d00\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cd038e6529328cfab7fac916125b56d7\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cd038e6529328cfab7fac916125b56d7\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9dfe5e82a554c572da4cacf8501afec4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9dfe5e82a554c572da4cacf8501afec4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\7b36cef88e7ecc9ed78024141f9ec76e\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\7b36cef88e7ecc9ed78024141f9ec76e\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\243c598e14e7acd1b93ba58ebfa21737\transformed\fragment-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\243c598e14e7acd1b93ba58ebfa21737\transformed\fragment-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\fc19df349c1825f0c247887fbd213783\transformed\jetified-activity-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\fc19df349c1825f0c247887fbd213783\transformed\jetified-activity-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9ca4a97380678d5590b2436da27b403a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\9ca4a97380678d5590b2436da27b403a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\af8b09d2cf351cafb7a46f49e4e28bc6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\af8b09d2cf351cafb7a46f49e4e28bc6\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6032632c6a951bbe907874d963338b9e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6032632c6a951bbe907874d963338b9e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\1ecfd293fdeaffe61acaeb0b584a251c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\1ecfd293fdeaffe61acaeb0b584a251c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cbbd58b7762a1b3a12d5321ad29f4d39\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\cbbd58b7762a1b3a12d5321ad29f4d39\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b04307646cdd5735ba56d95d607b72e4\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b04307646cdd5735ba56d95d607b72e4\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\aa0343153006e444c0e53a9f6e63bfc8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\aa0343153006e444c0e53a9f6e63bfc8\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b38b2d93a184d06b94dbcf6ccfb2ae49\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b38b2d93a184d06b94dbcf6ccfb2ae49\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\d24466c01f421ae9dde2ba4b46a44d5f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\d24466c01f421ae9dde2ba4b46a44d5f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b133edea6de19c1bf97136940449430a\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b133edea6de19c1bf97136940449430a\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3f43236e640fd6717444dfb67f2fffed\transformed\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8a0344c0aebe38a41c0d2ccd67bfef90\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8a0344c0aebe38a41c0d2ccd67bfef90\transformed\exifinterface-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\738ce9b2c90ea831b22f91ad9d75674f\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\738ce9b2c90ea831b22f91ad9d75674f\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6f0b4160733c8d5c6a46161af459d84a\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6f0b4160733c8d5c6a46161af459d84a\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e786a25b57d07ce707f8fdf36f3aec32\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e786a25b57d07ce707f8fdf36f3aec32\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e1a19b0e773bac5c51ddaff4515cc5d9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\e1a19b0e773bac5c51ddaff4515cc5d9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8b0b6c2cdc33c67fd0666bce5ff648c8\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\8b0b6c2cdc33c67fd0666bce5ff648c8\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\160440b6cf9ef619ddd0c604fd9228dc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\160440b6cf9ef619ddd0c604fd9228dc\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b9a59422db34ad2a2be3bc934b1fec63\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b9a59422db34ad2a2be3bc934b1fec63\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6041d291aac8e79c1ede0e0333b5f71a\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\6041d291aac8e79c1ede0e0333b5f71a\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\f3a86c9bb86a07359f1ef34dc907945a\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\f3a86c9bb86a07359f1ef34dc907945a\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\48201e72b53950870d75bcfbddfdd260\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\48201e72b53950870d75bcfbddfdd260\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\c8521bb990182a2b1a79482a3e625a5d\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\c8521bb990182a2b1a79482a3e625a5d\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3a3548fd213cde1f4e3369028932819c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\3a3548fd213cde1f4e3369028932819c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\be554c61bccd07d0de9a530e3cded1ce\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\be554c61bccd07d0de9a530e3cded1ce\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\323c8889fa9eccd3b918c10ee6e37b80\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\323c8889fa9eccd3b918c10ee6e37b80\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\a2dc3c28d0baa13bb18be37d09c1839f\transformed\jetified-framework-7.0.0\AndroidManifest.xml:25:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\a2dc3c28d0baa13bb18be37d09c1839f\transformed\jetified-framework-7.0.0\AndroidManifest.xml:25:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b0aef08968475b0e7c37486d12af8f4c\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\jeney.marcell\.gradle\caches\transforms-3\b0aef08968475b0e7c37486d12af8f4c\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:32:13-34:64
+	android:resource
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:34:17-51
+	android:name
+		ADDED from C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\android\app\src\main\AndroidManifest.xml:33:17-67
+queries
+ADDED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
+intent#action:name:android.media.action.IMAGE_CAPTURE
+ADDED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
+action#android.media.action.IMAGE_CAPTURE
+ADDED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-73
+	android:name
+		ADDED from [:capacitor-camera] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\camera\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-70
+uses-permission#android.permission.VIBRATE
+ADDED from [:capacitor-haptics] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from [:capacitor-haptics] C:\Users\jeney.marcell\Desktop\Projects\excercises\gym-exc-tracker-ionic-app\node_modules\@capacitor\haptics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-63
