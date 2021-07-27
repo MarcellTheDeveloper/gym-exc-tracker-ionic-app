@@ -1,8 +1,5 @@
-<app-header [headerName]="'Workout days'"></app-header>
+<app-header [headerName]="language['labels']['workoutDays']"></app-header>
 <ion-content>
-  <app-single-workout-day
-    *ngFor="let day of daysArr"
-    [day]="day"
-    [exercise]="exercisesByDay[day]"
-  ></app-single-workout-day>
+  <app-single-workout-day *ngFor="let day of daysArr" [day]="day" [exercise]="exercisesByDay[day]">
+  </app-single-workout-day>
 </ion-content>

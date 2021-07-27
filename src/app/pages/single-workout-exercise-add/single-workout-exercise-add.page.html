@@ -3,7 +3,7 @@
     <ion-button color="primary" slot="start" class="navButton" (click)="goBackToHomePage()">
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="ion-text-center">{{ day}}</ion-title>
+    <ion-title class="ion-text-center">{{ dayName}}</ion-title>
     <ion-button color="secondary" slot="end" class="navButton" (click)="saveExercise()">
       <ion-icon name="save-outline"></ion-icon>
     </ion-button>
@@ -11,20 +11,21 @@
 </ion-header>
 <ion-content>
   <ion-toolbar>
-    <ion-title>Add an exercise</ion-title>
+    <ion-title>{{language['labels']['addExercise']}}</ion-title>
   </ion-toolbar>
   <ion-item>
     <span class="reqStar"> *</span>
-    <ion-label position="fixed">Name:</ion-label>
+    <ion-label position="fixed">{{language['singleExerciseLabels']['name']}}:</ion-label>
     <ion-input [(ngModel)]="formValues['name']" required></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="fixed">Bodypart:</ion-label>
+    <span class="reqStar"> *</span>
+    <ion-label position="fixed">{{language['singleExerciseLabels']['bodyPart']}}:</ion-label>
     <ion-input [(ngModel)]="formValues['bodyPart']"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed"><span class="reqStar"> *</span>Sets:</ion-label>
+    <ion-label position="fixed"><span class="reqStar"> *</span>{{language['singleExerciseLabels']['sets']}}:</ion-label>
     <ion-button color="primary" class="navButton" (click)="valueChanger('sets',false)">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
@@ -35,7 +36,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed"><span class="reqStar"> *</span>Reps:</ion-label>
+    <ion-label position="fixed"><span class="reqStar"> *</span>{{language['singleExerciseLabels']['reps']}}:</ion-label>
     <ion-button color="primary" class="navButton" (click)="valueChanger('reps',false)">
       <ion-icon name="remove-outline"></ion-icon>
     </ion-button>
@@ -46,11 +47,12 @@
   </ion-item>
 
   <ion-item>
-    <span class="reqStar"> *</span>Weight
-    (<ion-select [placeholder]="formValues.unit" [(ngModel)]="formValues['unit']">
+    <span class="reqStar"> *</span>{{language['singleExerciseLabels']['weight']}}
+    (<ion-select [cancelText]="language['exerciseSettings']['cancel']" [placeholder]="formValues.unit"
+      [(ngModel)]="formValues['unit']">
       <ion-select-option value="kg">kg</ion-select-option>
       <ion-select-option value="lbs">lbs</ion-select-option>
-      <ion-select-option value="other">other</ion-select-option>
+      <ion-select-option value="other">{{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
     </ion-select>)
     <ion-button color="primary" class="navButton" (click)="valueChanger('weight',false)">
       <ion-icon name="remove-outline"></ion-icon>
@@ -62,13 +64,13 @@
     </ion-button>
   </ion-item>
   <ion-item>
-    <ion-textarea rows="5" placeholder="Add description and other informations here..."
+    <ion-textarea rows="5" [placeholder]="language['singleExerciseLabels']['descPlaceholder']"
       [(ngModel)]="formValues['desc']">
     </ion-textarea>
   </ion-item>
   <ion-item>
     <ion-button color="primary" (click)="takePicture()">
-      <ion-icon name="add-outline"></ion-icon>Upload image
+      <ion-icon name="add-outline"></ion-icon>{{language['singleExerciseLabels']['uploadImg']}}
     </ion-button>
   </ion-item>
   <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>

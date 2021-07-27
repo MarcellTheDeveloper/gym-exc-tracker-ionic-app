@@ -16,42 +16,42 @@
     <ion-item>
       <ion-icon name="reader-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Name</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['name']}}</ion-card-subtitle>
         <ion-label>{{ exercise['name']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="accessibility-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Body part</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['bodyPart']}}t</ion-card-subtitle>
         <ion-label>{{ exercise['bodyPart']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="refresh-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Sets</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['sets']}}</ion-card-subtitle>
         <ion-label>{{ exercise['sets']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="repeat-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Reps</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['reps']}}</ion-card-subtitle>
         <ion-label>{{ exercise['reps']}}</ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="barbell-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Weight ({{exercise['unit']}})</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['weight']}} ({{exercise['unit']}})</ion-card-subtitle>
         <ion-label>{{ exercise['weight']}} </ion-label>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="document-text-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Description</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['desc']}}</ion-card-subtitle>
         <p>{{ exercise['desc']}} </p>
       </div>
     </ion-item>

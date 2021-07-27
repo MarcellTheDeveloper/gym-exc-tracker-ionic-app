@@ -26,4 +26,4 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

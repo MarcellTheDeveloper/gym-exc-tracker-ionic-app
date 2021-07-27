@@ -5,6 +5,7 @@ import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 import { FireDbService } from 'src/app/services/fire-db.service';
 import { CapStorageService } from 'src/app/services/cap-storage.service';
 import { LoadingController } from '@ionic/angular';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class HomePage implements OnInit
 {
+  language;
   currentDay;
   exercisesByDay: any = {
     monday: [],
@@ -38,11 +40,13 @@ export class HomePage implements OnInit
     public fireAuthService: FireAuthService,
     private fireDbService: FireDbService,
     public capStorage: CapStorageService,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    public languageService: LanguageService
   ) { }
 
   async ngOnInit()
   {
+    this.language = this.languageService.returnLanguage().language;
     this.currentDay = new Date().getDay();
 
     this.daysArr = this.daysArr
@@ -52,26 +56,12 @@ export class HomePage implements OnInit
 
     this.fireDbService.getExercisesDoc(userId).subscribe(async (udpatedExc) =>
     {
-      // const loading = await this.loadingController.create({
-      //   cssClass: 'my-custom-class',
-      //   message: 'Please wait...',
-      //   duration: 300,
-      // });
+
       if (udpatedExc)
       {
         this.exercisesByDay = udpatedExc;
         this.dayHandler.updateExercisesByDayFromDb(udpatedExc);
       }
-
-      // await loading.present();
-      // const { role, data } = await loading.onDidDismiss();
-
-
-
-
     });
-
-
-
   }
 }

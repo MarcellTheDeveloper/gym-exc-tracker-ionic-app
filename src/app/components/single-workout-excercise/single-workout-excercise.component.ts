@@ -5,6 +5,7 @@ import { GymDayHandlerService } from './../../services/gym-day-handler.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
 import { SingleWorkoutExerciseEditPage } from 'src/app/pages/single-workout-exercise-edit/single-workout-exercise-edit.page';
+import { LanguageService } from 'src/app/services/language.service';
 @Component({
   selector: 'app-single-workout-excercise',
   templateUrl: './single-workout-excercise.component.html',
@@ -15,16 +16,18 @@ export class SingleWorkoutExcerciseComponent implements OnInit, OnChanges
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
   loader = false;
+  language;
   constructor(
     private dayHandler: GymDayHandlerService,
     public modalController: ModalController,
     public actionSheetController: ActionSheetController,
-    public alertController: AlertController
+    public alertController: AlertController,
+    public languageService: LanguageService
   ) { }
 
   ngOnInit()
   {
-
+    this.language = this.languageService.returnLanguage().language;
   }
   ngOnChanges()
   {
@@ -46,11 +49,11 @@ export class SingleWorkoutExcerciseComponent implements OnInit, OnChanges
   async onClickSettings()
   {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Settings',
+      header: this.language.exerciseSettings.settings,
       cssClass: 'my-custom-class',
       buttons: [
         {
-          text: 'Edit exercise',
+          text: this.language.exerciseSettings.edit,
           icon: 'create-outline',
           cssClass: 'actionSheetEditBtn',
           handler: async () =>
@@ -66,24 +69,24 @@ export class SingleWorkoutExcerciseComponent implements OnInit, OnChanges
           },
         },
         {
-          text: 'Delete',
+          text: this.language.exerciseSettings.delete,
           icon: 'trash-outline',
           cssClass: 'actionSheetDeleteBtn',
           handler: async () =>
           {
             const alert = await this.alertController.create({
               cssClass: 'my-custom-class',
-              header: 'Confirm',
-              message: `Are you sure you want to delete <span class="alertMessageExcName">${this.exercise.name}</span> exercise?`,
+              header: this.language.exerciseSettings.alert,
+              message: `${this.language.exerciseSettings.deleteConfirm} <span class="alertMessageExcName">${this.exercise.name}</span>?`,
               buttons: [
                 {
-                  text: 'No i changed my mind',
+                  text: this.language.exerciseSettings.no,
                   role: 'cancel',
                   cssClass: 'noIDontBtn',
                   handler: () => { },
                 },
                 {
-                  text: 'Yes i do!',
+                  text: this.language.exerciseSettings.yes,
                   cssClass: 'yesIDoBtn',
                   handler: () =>
                   {
@@ -100,7 +103,7 @@ export class SingleWorkoutExcerciseComponent implements OnInit, OnChanges
           },
         },
         {
-          text: 'Cancel',
+          text: this.language.exerciseSettings.cancel,
           icon: 'close-outline',
           role: 'cancel',
           handler: () =>

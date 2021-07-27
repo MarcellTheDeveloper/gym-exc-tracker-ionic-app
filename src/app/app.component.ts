@@ -7,7 +7,9 @@ import { FireAuthService } from './services/fire-auth.service';
 import { LoadingController } from '@ionic/angular';
 import { FireDbService } from './services/fire-db.service';
 import { Route } from '@angular/compiler/src/core';
-
+import { LanguageService } from './services/language.service';
+import * as languageHu from './languages/langHU';
+import * as languageEng from './languages/langENG';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,27 +17,23 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class AppComponent implements OnInit
 {
-  // isLoggedIn = false;
-  // userEmail = '';
-  // userId = '';
-  // udpatedExc;
-  // loginSubscription;
-  // userEmailSubscription;
+  language = languageEng;
   constructor(
     public fireAuthService: FireAuthService,
     public firebaseAuth: AngularFireAuth,
     public loadingController: LoadingController,
     public capStorage: CapStorageService,
-    private router: Router
+    private router: Router,
+    public languageService: LanguageService
   ) { }
   async ngOnInit()
   {
-    // const loading = await this.loadingController.create({
-    //   cssClass: 'my-custom-class',
-    //   message: 'Please wait...',
-    //   duration: 500,
-    // });
-    // await loading.present();
+    const languages = {
+      magyar: new languageHu.LanguageHu(),
+      english: new languageEng.LanguageEng()
+    };
+    const selectedLanguageName = await this.capStorage.getLanguage();
+    this.languageService.setLanguageOnInit(languages, selectedLanguageName);
 
     const logged = await this.capStorage.getIsLoggedIn();
     if (logged)
@@ -45,16 +43,6 @@ export class AppComponent implements OnInit
     {
       this.router.navigate(['/public/login']);
     }
-
-
-    // this.isLoggedIn = logged ? true : false;
-    // console.log(logged, this.userEmail);
-
-    // const { role, data } = await loading.onDidDismiss();
   }
 
-  // logOut()
-  // {
-  //   this.fireAuthService.logout();
-  // }
 }

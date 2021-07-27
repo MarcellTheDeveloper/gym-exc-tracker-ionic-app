@@ -1,10 +1,10 @@
 <div class="dayHeaderContainer">
   <p class="dayHeader">
-    {{ day }}
+    {{ dayName }}
   </p>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle class="ion-text-center">Exercises</ion-card-subtitle>
+      <ion-card-subtitle class="ion-text-center">{{language['labels']['exercises']}}</ion-card-subtitle>
       <div class="center-content">
         <span *ngFor="let bodyPart of dailyBodyParts" class="singleBodyPart">{{bodyPart}}</span>
       </div>
@@ -15,7 +15,7 @@
 
           <app-single-workout-excercise [exercise]="exc" [day]="day">
           </app-single-workout-excercise>
-          <ion-reorder class="reordeIcon">
+          <ion-reorder class="reordeIcon" appHighlightDanger>
           </ion-reorder>
         </ion-item>
       </ion-reorder-group>

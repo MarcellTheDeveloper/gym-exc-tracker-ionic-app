@@ -6,6 +6,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { CapStorageService } from 'src/app/services/cap-storage.service';
 import { v4 as uuidv4 } from 'uuid';
+import { LanguageService } from 'src/app/services/language.service';
 @Component({
   selector: 'app-single-workout-exercise-edit',
   templateUrl: './single-workout-exercise-edit.page.html',
@@ -17,23 +18,29 @@ export class SingleWorkoutExerciseEditPage implements OnInit
   @Input() day: string;
   oldExerciseValues: ExcerciseItem;
   loader = false;
+  selectedDayLowecase;
+  language;
   constructor(
     private modalController: ModalController,
     private dayHandler: GymDayHandlerService,
     private alertController: AlertController,
     public fireStorage: AngularFireStorage,
-    private capStorage: CapStorageService
+    private capStorage: CapStorageService,
+    public languageService: LanguageService
   ) { }
   ngOnInit()
   {
+    this.language = this.languageService.returnLanguage().language;
     this.exercise = { ...this.exercise };
     this.oldExerciseValues = { ...this.exercise };
+    this.selectedDayLowecase = this.day.toLowerCase();
   }
 
   async onSaveExercise()
   {
     this.dayHandler.editExercise(
       this.day.toLocaleLowerCase(),
+      this.selectedDayLowecase,
       // eslint-disable-next-line @typescript-eslint/dot-notation
       this.oldExerciseValues['id'],
       this.exercise
@@ -76,23 +83,24 @@ export class SingleWorkoutExerciseEditPage implements OnInit
       this.exercise.reps !== this.oldExerciseValues.reps ||
       this.exercise.sets !== this.oldExerciseValues.sets ||
       this.exercise.weight !== this.oldExerciseValues.weight ||
-      this.exercise.desc !== this.oldExerciseValues.desc
+      this.exercise.desc !== this.oldExerciseValues.desc ||
+      this.exercise.day !== this.oldExerciseValues.day
     )
     {
       console.log(this.exercise, this.oldExerciseValues);
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
-        header: 'Confirm',
-        message: 'Are you sure you want to leave what you have started?',
+        header: this.language.alertMessageLabels.alert,
+        message: this.language.alertMessageLabels.leaveConfirm,
         buttons: [
           {
-            text: 'No i stay thanks',
+            text: this.language.alertMessageLabels.iStay,
             role: 'cancel',
             cssClass: 'noIDontBtn',
             handler: () => { },
           },
           {
-            text: 'Yes i do',
+            text: this.language.alertMessageLabels.iLeave,
             cssClass: 'yesIDoBtn',
             handler: () =>
             {

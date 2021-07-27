@@ -102,6 +102,7 @@ export class FireAuthService
     await Storage.remove({ key: 'userId' });
     this.firebaseAuth.signOut();
     this.router.navigate(['public/login']);
+    location.reload();
   }
   //check if a user is logged in
   async getIsLoggedIn()

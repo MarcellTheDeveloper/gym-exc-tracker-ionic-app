@@ -3,7 +3,7 @@
     <ion-button color="primary" slot="start" class="navButton" (click)="dismissModal()">
       <ion-icon name="return-up-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="ion-text-center">Edit exercise</ion-title>
+    <ion-title class="ion-text-center">{{oldExerciseValues.name}}</ion-title>
     <ion-button color="primary" slot="end" class="navButton" (click)="onSaveExercise()" color="secondary">
       <ion-icon name="save-outline"></ion-icon>
     </ion-button>
@@ -11,47 +11,66 @@
 </ion-header>
 
 <ion-content>
+  <ion-toolbar>
+    <ion-title>{{language['labels']['editExercise']}}</ion-title>
+  </ion-toolbar>
   <ion-progress-bar value="0.25" buffer="0.5" *ngIf="loader"></ion-progress-bar>
   <img [src]="exercise['img']" *ngIf="exercise['img'].length !== 0 && !loader" class="minHeight1px">
   <ion-list>
     <ion-item>
       <ion-button color="primary" (click)="takePicture()">
-        <ion-icon name="swap-vertical-outline"></ion-icon>Change
-        image
+        <ion-icon name="swap-vertical-outline"></ion-icon>{{language['singleExerciseLabels']['changeImg']}}
       </ion-button>
+    </ion-item>
+    <ion-item class="daySelect">
+      <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+
+      <div>
+        <ion-card-subtitle> {{language['labels']['day']}}</ion-card-subtitle>
+        <ion-select [cancelText]="language['exerciseSettings']['cancel']" class="daySelect"
+          [placeholder]="selectedDayLowecase" [(ngModel)]="selectedDayLowecase">
+          <ion-select-option value="monday">{{language['days']['exercisesByDay']['monday']}}</ion-select-option>
+          <ion-select-option value="tuesday">{{language['days']['exercisesByDay']['tuesday']}}</ion-select-option>
+          <ion-select-option value="wednesday">{{language['days']['exercisesByDay']['wednesday']}}</ion-select-option>
+          <ion-select-option value="thursday">{{language['days']['exercisesByDay']['thursday']}}</ion-select-option>
+          <ion-select-option value="friday">{{language['days']['exercisesByDay']['friday']}}</ion-select-option>
+          <ion-select-option value="saturday">{{language['days']['exercisesByDay']['saturday']}}</ion-select-option>
+          <ion-select-option value="sunday">{{language['days']['exercisesByDay']['sunday']}}</ion-select-option>
+        </ion-select>
+      </div>
     </ion-item>
     <ion-item>
       <ion-icon name="reader-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Name</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['name']}}</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['name']"></ion-input>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="accessibility-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Body part</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['bodyPart']}}</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['bodyPart']"></ion-input>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="refresh-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Sets</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['sets']}}</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['sets']"></ion-input>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="repeat-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Reps</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['reps']}}</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['reps']"></ion-input>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="barbell-outline" slot="start"></ion-icon>
       <div>
-        <ion-card-subtitle>Weight</ion-card-subtitle>
+        <ion-card-subtitle>{{language['singleExerciseLabels']['weight']}}</ion-card-subtitle>
         <ion-input [(ngModel)]="exercise['weight']"></ion-input>
       </div>
     </ion-item>
@@ -59,17 +78,18 @@
       <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
 
       <div>
-        <ion-card-subtitle>Unit</ion-card-subtitle>
-        <ion-select [placeholder]="exercise['unit']" [(ngModel)]="exercise['unit']">
+        <ion-card-subtitle>{{language['singleExerciseLabels']['unit']}}</ion-card-subtitle>
+        <ion-select [cancelText]="language['exerciseSettings']['cancel']" [placeholder]="exercise['unit']"
+          [(ngModel)]="exercise['unit']">
           <ion-select-option value="kg">kg</ion-select-option>
           <ion-select-option value="lbs">lbs</ion-select-option>
-          <ion-select-option value="other">other</ion-select-option>
+          <ion-select-option value="other">{{language['singleExerciseLabels']['otherWeightType']}}</ion-select-option>
         </ion-select>
       </div>
     </ion-item>
     <ion-item>
       <ion-icon name="document-text-outline" slot="start"></ion-icon>
-      <ion-textarea rows="5" placeholder="Add description and other informations here..."
+      <ion-textarea rows="5" [placeholder]="language['singleExerciseLabels']['descPlaceholder']"
         [(ngModel)]="exercise['desc']">
       </ion-textarea>
     </ion-item>

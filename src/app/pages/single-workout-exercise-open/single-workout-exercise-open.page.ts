@@ -1,46 +1,56 @@
 import { ExcerciseItem } from './../../interfaces/excercise-item';
 import { Component, Input, OnInit } from '@angular/core';
-import {
+import
+{
   ActionSheetController,
   ModalController,
   AlertController,
 } from '@ionic/angular';
 import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 import { SingleWorkoutExerciseEditPage } from '../single-workout-exercise-edit/single-workout-exercise-edit.page';
+import { LanguageService } from 'src/app/services/language.service';
 // import { GymDayHandlerService } from 'src/app/services/gym-day-handler.service';
 @Component({
   selector: 'app-single-workout-exercise-open',
   templateUrl: './single-workout-exercise-open.page.html',
   styleUrls: ['./single-workout-exercise-open.page.scss'],
 })
-export class SingleWorkoutExerciseOpenPage implements OnInit {
+export class SingleWorkoutExerciseOpenPage implements OnInit
+{
   @Input() exercise: ExcerciseItem;
   @Input() day: string;
-
+  language;
   constructor(
     private dayHandler: GymDayHandlerService,
     private modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private alertController: AlertController
-  ) {}
-  ngOnInit() {}
+    private alertController: AlertController,
+    public languageService: LanguageService
+  ) { }
+  ngOnInit()
+  {
+    this.language = this.languageService.returnLanguage().language;
+  }
 
-  dismissModal() {
+  dismissModal()
+  {
     this.modalController.dismiss({
       dismissed: true,
     });
   }
 
-  async onClickSettings() {
+  async onClickSettings()
+  {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Settings',
+      header: this.language.exerciseSettings.settings,
       cssClass: 'my-custom-class',
       buttons: [
         {
-          text: 'Edit exercise',
+          text: this.language.exerciseSettings.edit,
           icon: 'create-outline',
           cssClass: 'actionSheetEditBtn',
-          handler: async () => {
+          handler: async () =>
+          {
             this.modalController.dismiss({
               dismissed: true,
             });
@@ -56,25 +66,28 @@ export class SingleWorkoutExerciseOpenPage implements OnInit {
           },
         },
         {
-          text: 'Delete',
+          text: this.language.exerciseSettings.delete,
           cssClass: 'actionSheetDeleteBtn',
           icon: 'trash-outline',
-          handler: async () => {
+          handler: async () =>
+          {
             const alert = await this.alertController.create({
               cssClass: 'my-custom-class',
-              header: 'Confirm',
-              message: `Are you sure you want to delete <span class="alertMessageExcName">${this.exercise.name}</span> exercise?`,
+              header: this.language.alertMessageLabels.alert,
+              // eslint-disable-next-line max-len
+              message: `${this.language.exerciseSettings.deleteConfirm} <span class="alertMessageExcName">${this.exercise.name}</span>?`,
               buttons: [
                 {
-                  text: 'No i changed my mind',
+                  text: this.language.exerciseSettings.no,
                   role: 'cancel',
                   cssClass: 'noIDontBtn',
-                  handler: () => {},
+                  handler: () => { },
                 },
                 {
-                  text: 'Yes i do!',
+                  text: this.language.exerciseSettings.yes,
                   cssClass: 'yesIDoBtn',
-                  handler: () => {
+                  handler: () =>
+                  {
                     this.dayHandler.deleteExercise(
                       this.day.toLocaleLowerCase(),
                       this.exercise.name
@@ -91,10 +104,11 @@ export class SingleWorkoutExerciseOpenPage implements OnInit {
           },
         },
         {
-          text: 'Cancel',
+          text: this.language.exerciseSettings.cancel,
           icon: 'close-outline',
           role: 'cancel',
-          handler: () => {
+          handler: () =>
+          {
             console.log('Cancel clicked');
           },
         },
@@ -103,6 +117,5 @@ export class SingleWorkoutExerciseOpenPage implements OnInit {
     await actionSheet.present();
 
     const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 }

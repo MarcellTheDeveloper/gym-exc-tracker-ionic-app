@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { CapStorageService } from 'src/app/services/cap-storage.service';
 import { v4 as uuidv4 } from 'uuid';
+import { LanguageService } from 'src/app/services/language.service';
 @Component({
   selector: 'app-single-workout-exercise-add',
   templateUrl: './single-workout-exercise-add.page.html',
@@ -16,10 +17,13 @@ import { v4 as uuidv4 } from 'uuid';
 export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
 {
   @Input() day: string;
+  @Input() dayName: string;
+  language;
   activeCurrentDaySub;
   loader = false;
   formValues: ExcerciseItem = {
     id: uuidv4(),
+    day: '',
     name: '',
     bodyPart: '',
     sets: 0,
@@ -35,14 +39,17 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     private modalController: ModalController,
     public sanitizer: DomSanitizer,
     public fireStorage: AngularFireStorage,
-    private capStorage: CapStorageService
+    private capStorage: CapStorageService,
+    public languageService: LanguageService
   ) { }
 
   ngOnInit()
   {
+    this.language = this.languageService.returnLanguage().language;
     this.activeCurrentDaySub = this.dayHandler.activeCurrentDay.subscribe(
       (day) => (this.day = day)
     );
+    this.formValues.day = this.day.toLowerCase();
   }
 
   async goBackToHomePage()
@@ -53,22 +60,24 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
       this.formValues.sets ||
       this.formValues.weight ||
       this.formValues.img ||
-      this.formValues.desc
+      this.formValues.desc ||
+      this.formValues.bodyPart
     )
     {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
-        header: 'Confirm',
-        message: 'Are you sure you want to leave what you have started?',
+        header: this.language.alertMessageLabels.alert,
+        // eslint-disable-next-line @typescript-eslint/dot-notation
+        message: this.language.alertMessageLabels.leaveConfirm,
         buttons: [
           {
-            text: 'No i stay thanks',
+            text: this.language.alertMessageLabels.iStay,
             role: 'cancel',
             cssClass: 'noIDontBtn',
             handler: () => { },
           },
           {
-            text: 'Yes i do',
+            text: this.language.alertMessageLabels.iLeave,
             cssClass: 'yesIDoBtn',
             handler: () =>
             {
@@ -95,6 +104,7 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     {
       this.formValues = {
         id: '',
+        day: '',
         name: '',
         bodyPart: '',
         sets: 0,
@@ -155,13 +165,15 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
       this.formValues.name &&
       this.formValues.sets &&
       this.formValues.reps &&
-      this.formValues.weight
+      this.formValues.weight &&
+      this.formValues.bodyPart
     )
     {
       this.dayHandler.addExercise(this.day.toLowerCase(), this.formValues);
       this.formValues = {
         id: this.formValues.id,
         name: '',
+        day: '',
         bodyPart: '',
         sets: 0,
         reps: 0,
@@ -177,9 +189,9 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
     {
       const alert = await this.alertController.create({
         cssClass: 'yesIDoBtn',
-        header: 'Error',
+        header: this.language.alertMessageLabels.error,
         // subHeader: 'Subtitle',
-        message: 'Before saving please fill all the required fields!',
+        message: this.language.alertMessageLabels.beforeSaveFillAllReq,
         buttons: ['OK'],
       });
       await alert.present();
@@ -203,10 +215,6 @@ export class SingleWorkoutExerciseAddPage implements OnInit, OnDestroy
       .then(async (snapshot) =>
       {
         this.formValues.img = await snapshot.ref.getDownloadURL();
-        console.log(
-          'Uploaded a base64 string!',
-          await snapshot.ref.getDownloadURL()
-        );
         this.loader = false;
       });
   };

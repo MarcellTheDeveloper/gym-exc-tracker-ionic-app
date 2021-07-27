@@ -9,6 +9,20 @@
       <ion-title>
         <ion-note class="center-content">{{ userEmail }}</ion-note>
       </ion-title>
+      <hr>
+      <ion-item class="langSelectContainer">
+        <!-- <ion-icon name="earth-outline"></ion-icon> -->
+        <div>
+          <ion-card-subtitle>{{language['labels']['language']}}</ion-card-subtitle>
+          <ion-select okText="Ok" [cancelText]="language['exerciseSettings']['cancel']"
+            [placeholder]="languageName ? languageName : 'Magyar'" [(ngModel)]="languageName" class="langSelectDropdown"
+            (ionChange)="onLangChange()">
+            <ion-select-option value="magyar">{{language['labels']['magyar']}}
+            </ion-select-option>
+            <ion-select-option value="english">{{language['labels']['english']}}</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-item>
     </ion-toolbar>
   </ion-header>
   <ion-content>
@@ -16,33 +30,32 @@
       <ion-menu-toggle>
         <ion-item routerLink="/private/home" routerLinkActive="activeLink">
           <ion-icon name="barbell-outline" slot="start"></ion-icon>
-          <ion-label>Workout days</ion-label>
+          <ion-label>{{language['labels']['workoutDays']}}</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
-        <ion-item routerLink="/private/favourite-gyms" routerLinkActive="activeLink">
-          <ion-icon name="business-outline" slot="start"></ion-icon>
-          <ion-label>Favourite gyms</ion-label>
+        <ion-item routerLink="/private/me" routerLinkActive="activeLink">
+          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+          <ion-label>{{language['labels']['myAccount']}}</ion-label>
         </ion-item>
       </ion-menu-toggle>
       <ion-menu-toggle>
         <ion-button color="danger" expand="block" (click)="logOut()">
           <ion-icon name="log-out-outline"></ion-icon>
-          Log out
+          {{language['actions']['logOut']}}
         </ion-button>
       </ion-menu-toggle>
     </ion-list>
 
   </ion-content>
 </ion-menu>
-dasdsa
 <ion-router-outlet id="main"></ion-router-outlet>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home" routerLink="/private/home" routerLinkActive="activeLink">
       <ion-icon name="barbell-outline"></ion-icon>
-      <ion-label>Workouts</ion-label>
+      <ion-label>{{language['labels']['workoutDays']}}</ion-label>
     </ion-tab-button>
 
     <!-- <ion-tab-button
@@ -56,7 +69,7 @@ dasdsa
 
     <ion-tab-button tab="me" routerLink="/private/me" routerLinkActive="activeLink">
       <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Me</ion-label>
+      <ion-label>{{language['labels']['myAccount']}}</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-favourite-gyms',
   templateUrl: './favourite-gyms.page.html',
   styleUrls: ['./favourite-gyms.page.scss'],
 })
-export class FavouriteGymsPage implements OnInit {
+export class FavouriteGymsPage implements OnInit
+{
 
-  constructor() { }
+  constructor(public languageService: LanguageService) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
 
 }

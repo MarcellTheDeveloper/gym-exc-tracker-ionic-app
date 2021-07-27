@@ -1,8 +1,10 @@
+
 import { ModalController } from '@ionic/angular';
 import { GymDayHandlerService } from './../../services/gym-day-handler.service';
 import { Component, Input, OnInit, OnDestroy, AfterViewInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { SingleWorkoutExerciseAddPage } from 'src/app/pages/single-workout-exercise-add/single-workout-exercise-add.page';
+import { LanguageService } from 'src/app/services/language.service';
 
 
 @Component({
@@ -15,15 +17,45 @@ export class SingleWorkoutDayComponent implements OnInit, OnDestroy, OnChanges
   @Input() day: any;
   @Input() exercise: any;
   dailyBodyParts = [];
+  languageName;
+  language;
+  dayName;
   constructor(
     private modalController: ModalController,
-    public dayHandler: GymDayHandlerService
+    public dayHandler: GymDayHandlerService,
+    public languageService: LanguageService
   ) { }
 
-  async ngOnInit()
+  ngOnInit()
   {
-    // this.exercises = this.dayHandler.getExercisesByDay(this.day.toLowerCase());
+    this.languageName = this.languageService.returnLanguage().languageName;
+    this.language = this.languageService.returnLanguage().language;
     this.day = this.day.charAt(0).toUpperCase() + this.day.slice(1);
+    switch (this.day)
+    {
+      case 'Sunday':
+        this.dayName = this.language.days.exercisesByDay.sunday;
+        break;
+      case 'Monday':
+        this.dayName = this.language.days.exercisesByDay.monday;
+        break;
+      case 'Tuesday':
+        this.dayName = this.language.days.exercisesByDay.tuesday;
+        break;
+      case 'Wednesday':
+        this.dayName = this.language.days.exercisesByDay.wednesday;
+        break;
+      case 'Thursday':
+        this.dayName = this.language.days.exercisesByDay.thursday;
+        break;
+      case 'Friday':
+        this.dayName = this.language.days.exercisesByDay.friday;
+        break;
+      case 'Saturday':
+        this.dayName = this.language.days.exercisesByDay.saturday;
+    }
+    // this.exercises = this.dayHandler.getExercisesByDay(this.day.toLowerCase());
+
   }
   ngOnChanges()
   {
@@ -48,6 +80,7 @@ export class SingleWorkoutDayComponent implements OnInit, OnDestroy, OnChanges
       componentProps: {
         exercise: this.exercise,
         day: this.day,
+        dayName: this.dayName
       },
     });
     return await modal.present();

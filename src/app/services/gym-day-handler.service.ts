@@ -49,18 +49,27 @@ export class GymDayHandlerService
     this.fireDbService.reSetExercises(this.exercisesByDay, userId);
   }
 
-  async editExercise(day: string, oldExerciseId, newExercise)
+  async editExercise(currentday: string, selectedDay: string, oldExerciseId, newExercise)
   {
-    // eslint-disable-next-line @typescript-eslint/prefer-for-of
-    for (let i = 0; i < this.exercisesByDay[day].length; i++)
+    if (currentday.toLowerCase() === selectedDay.toLowerCase())
     {
-      if (this.exercisesByDay[day][i].id === oldExerciseId)
+      // eslint-disable-next-line @typescript-eslint/prefer-for-of
+      for (let i = 0; i < this.exercisesByDay[currentday].length; i++)
       {
-        this.exercisesByDay[day][i] = newExercise;
+        if (this.exercisesByDay[currentday][i].id === oldExerciseId)
+        {
+          this.exercisesByDay[currentday][i] = newExercise;
+        }
       }
+      const userId = await this.capStorage.getUserId();
+      this.fireDbService.reSetExercises(this.exercisesByDay, userId);
+    } else
+    {
+      this.exercisesByDay[currentday] = this.exercisesByDay[currentday].filter(exercise => exercise.id !== oldExerciseId);
+      this.exercisesByDay[selectedDay].push(newExercise);
+      const userId = await this.capStorage.getUserId();
+      this.fireDbService.reSetExercises(this.exercisesByDay, userId);
     }
-    const userId = await this.capStorage.getUserId();
-    this.fireDbService.reSetExercises(this.exercisesByDay, userId);
   }
 
   async deleteExercise(day: string, id: string)

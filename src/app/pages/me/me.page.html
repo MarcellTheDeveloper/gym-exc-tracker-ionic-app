@@ -1,6 +1,6 @@
-<app-header [headerName]="'My account'"></app-header>
-<ion-content
-  ><div class="emailDiv">
+<app-header [headerName]="language['labels']['myAccount']"></app-header>
+<ion-content>
+  <div class="emailDiv">
     <ion-avatar>
       <img src="../assets/doomguy.png" />
     </ion-avatar>
@@ -9,7 +9,7 @@
   <div id="logoutButtonContainer">
     <ion-button color="danger" expand="block" (click)="logOut()">
       <ion-icon name="log-out-outline"></ion-icon>
-      Log out
+      {{language['actions']['logOut']}}
     </ion-button>
   </div>
 </ion-content>
