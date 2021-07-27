@@ -12,6 +12,10 @@ export class LanguageEng
     addExercise = 'Add exercise';
     editExercise = 'Edit exercise';
     day = 'Day';
+    password = 'Password';
+    signup = 'Sign up';
+    dontHaveAcc = `Dont have an account?`;
+    haveAcc = 'Already have an account?';
   }();
 
   singleExerciseLabels = new class

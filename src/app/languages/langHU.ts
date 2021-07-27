@@ -12,6 +12,10 @@ export class LanguageHu
     addExercise = 'Gyakorlat hozzáadása';
     editExercise = 'Gyakorlat szerkesztése';
     day = 'Nap';
+    password = 'Jelszó';
+    signup = 'Regisztráció';
+    dontHaveAcc = `Nincs fiókod?`;
+    haveAcc = 'Már van fiókod';
   }();
 
   singleExerciseLabels = new class

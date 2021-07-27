@@ -1,6 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sign in</ion-title>
+    <ion-title slot="start">{{language['actions']['logIn']}}</ion-title>
+    <ion-select slot="end" okText="Ok" [cancelText]="language['exerciseSettings']['cancel']"
+      [placeholder]="languageName ? languageName : 'Magyar'" [(ngModel)]="languageName" class="langSelectDropdown"
+      (ionChange)="onLangChange()">
+      <ion-select-option value="magyar">{{language['labels']['magyar']}}
+      </ion-select-option>
+      <ion-select-option value="english">{{language['labels']['english']}}</ion-select-option>
+    </ion-select>
   </ion-toolbar>
 </ion-header>
 
@@ -8,16 +15,17 @@
   <div id="container">
     <img src="../../../assets/extrack-logo.png" alt="">
     <ion-input placeholder="Email" type="email" required [(ngModel)]="loginDetails.email"></ion-input>
-    <ion-input placeholder="Password" type="password" required [(ngModel)]="loginDetails.password"></ion-input>
+    <ion-input [placeholder]="language['labels']['password']" type="password" required
+      [(ngModel)]="loginDetails.password"></ion-input>
     <ion-button expand="block" color="primary" (click)="signInWithEmail()">
-      <ion-icon slot="start" name="log-in-outline" color=""></ion-icon>Sign in
+      <ion-icon slot="start" name="log-in-outline" color=""></ion-icon>{{language['actions']['logIn']}}
     </ion-button>
     <p class="errorMessage" *ngIf="loginError">{{loginError}}</p>
     <!-- <ion-button expand="block" color="danger" (click)="signInWithGoogle()"
       ><ion-icon slot="start" name="logo-google" color=""></ion-icon>Sign in
       with Google</ion-button
     > -->
-    <p>Don't have an account? <a routerLink="/public/sign-up">Sign up!</a></p>
+    <p>{{language['labels']['dontHaveAcc']}} <a routerLink="/public/sign-up">{{language['labels']['signup']}}</a></p>
   </div>
 </ion-content>
 <!-- <ion-button color="primary" (click)="logOut()"
